@@ -1,0 +1,141 @@
+<div [style.background]="'url(./assets/img/background1.jpg)'">
+
+
+    <div class="container">
+    
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+    
+          <div class="col-xl-10 col-lg-12 col-md-9">
+    
+            <div class="card o-hidden border-0 shadow-lg my-5">
+              <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                  <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
+                  <img class="col-lg-6  d-lg-block " src="assets/img/fabb.PNG" alt="" />
+                  <div class="col-lg-6">
+                    <div class="p-5">
+                      <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4"  [ngStyle]="{color:'blue' }"> Ajout d'un Ordre de fabrication </h1>
+                      </div>
+                      <form class="user" [formGroup]="ajoutOfForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                             <label>  <i> l'identifiant  d'un OF:</i></label>
+                             <input type="text"class="form-control form-control-user" id="idOF"  placeholder="l'identifiant"
+                             formControlName="idOF"
+                           class="form-control"
+
+                         [ngClass]="{ 'is-invalid': submitted && f.idOF.errors }">
+                         
+                         <div *ngIf="submitted && f.idOF.errors" class="invalid-feedback">
+                          <div *ngIf="f.idOF.errors.required">identifiant OF est requis</div>
+                          <div *ngIf="f.idOF.errors.minlength">
+                            l'identifiant doit comporter au moins 6 caractères</div>
+                      </div>
+                        </div>
+                        <div class="form-group">
+                            <label> <i> l'identifiant du Client :</i> </label>
+                             <input type="text" class="form-control form-control-user" id="idClient"  placeholder="nom"
+                             formControlName="idClient"
+                             class="form-control"
+  
+                           [ngClass]="{ 'is-invalid': submitted && f.idClient.errors }">
+                           
+                           <div *ngIf="submitted && f.idClient.errors" class="invalid-feedback">
+                            <div *ngIf="f.idClient.errors.required">identifiant de client  est requis</div>
+                            <div *ngIf="f.idClient.errors.minlength">l'identifiant de client doit comporter au moins 6 caractères</div>
+                        </div>
+                          </div>
+                          <div class="form-group">
+                            <label> <i> l'identifiant de produit concerné de <br>l'ordre de fabrication:</i></label>
+                             <input type="text" class="form-control form-control-user" id="idProduit" placeholder="produit"
+                             formControlName="idProduit"
+                             class="form-control"
+  
+                           [ngClass]="{ 'is-invalid': submitted && f.idProduit.errors }">
+                           
+                           <div *ngIf="submitted && f.idProduit.errors" class="invalid-feedback">
+                            <div *ngIf="f.idProduit.errors.required">identifiant de produit  est requis</div>
+                            <div *ngIf="f.idProduit.errors.minlength">l'identifiant de produit doit comporter au moins 6 caractères</div>
+                        </div>
+                          </div>
+                          <div class="form-group">
+                            <label>  <i> la référence de la commande de client:</i> </label>
+                             <input type="text" class="form-control form-control-user" id="refCommande"  placeholder="référence de la commande 
+                            "
+                            formControlName="refCommande"
+                            class="form-control"
+ 
+                          [ngClass]="{ 'is-invalid': submitted && f.refCommande.errors }">
+                          
+                          <div *ngIf="submitted && f.refCommande.errors" class="invalid-feedback">
+                           <div *ngIf="f.refCommande.errors.required">la référence de la commande de client est requis</div>
+                           <div *ngIf="f.refCommande.errors.minlength">la référence de la commande de client <br> doit comporter au moins 6 caractères </div>
+                       </div>
+                          </div>
+                          <div class="form-group">
+                            <label>  <i> La quantité :</i> </label>
+                             <input type="text" class="form-control form-control-user" id="quantite"  placeholder="quantité"
+                             formControlName="quantite"
+                             class="form-control"
+  
+                           [ngClass]="{ 'is-invalid': submitted && f.quantite.errors }">
+                           
+                           <div *ngIf="submitted && f.quantite.errors" class="invalid-feedback">
+                            <div *ngIf="f.quantite.errors.required"> La quantité est requis</div>
+                            <div *ngIf="f.quantite.errors.maxlength">la quantité doit etre numerique et comporter au plus 4 chiffres </div>
+                        </div>
+                          </div>
+                          <div class="form-group">
+                            <label>  <i> la date d'entrée:</i> </label> 
+                            <input type="text" class="form-control form-control-user" id="dateEntre"  placeholder="date d'entrée"
+                            formControlName="dateEntre"
+                            class="form-control"
+ 
+                          [ngClass]="{ 'is-invalid': submitted && f.dateEntre.errors }">
+                          
+                          <div *ngIf="submitted && f.dateEntre.errors" class="invalid-feedback">
+                           <div *ngIf="f.dateEntre.errors.required"> la date d'entrée est requis</div>
+                           
+                       </div>
+                          </div>
+                        
+                        <div class="form-group">
+                            <label>  <i> la date de sortie :</i> </label>
+                             <input type="text"  class="form-control form-control-user" id="dateSortie" placeholder="date de sortie"
+                             formControlName="dateSortie"
+                             class="form-control"
+  
+                           [ngClass]="{ 'is-invalid': submitted && f.dateSortie.errors }">
+                           
+                           <div *ngIf="submitted && f.dateSortie.errors" class="invalid-feedback">
+                            <div *ngIf="f.dateSortie.errors.required"> la date de sortie  est requis</div>
+                        
+                        </div>
+                        </div>
+                       
+                        
+                        <button class="btn btn-primary btn-user btn-block"> Ajouter</button>
+                    <button class="btn btn-primary btn-user btn-block" type="reset" (click)="onReset()">Annuler</button>
+                  
+                        <hr>
+                      
+                       
+                      </form>
+                      <hr>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+    
+        </div>
+    
+      </div>
+      
+    </div>
+    
