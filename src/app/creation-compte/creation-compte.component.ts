@@ -4,6 +4,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from 'src/app/helpers/Must-match.validator';
 import {  ReactiveFormsModule} from '@angular/forms'
 import { CustomValidators } from 'ng4-validators';
+import { UtilisateurService } from 'src/app/utilisateur.service';
+import {User} from 'src/app/Class/user';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-creation-compte',
@@ -11,10 +14,13 @@ import { CustomValidators } from 'ng4-validators';
   styleUrls: ['./creation-compte.component.css']
 })
 export class CreationCompteComponent implements OnInit {
+  
   registerForm: FormGroup;
     submitted = false;
 
-    constructor(private formBuilder: FormBuilder) { }
+    constructor(private formBuilder: FormBuilder) { 
+        
+    }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -30,7 +36,10 @@ export class CreationCompteComponent implements OnInit {
         }, {
             validator: MustMatch('password', 'confirmPassword')
         });
+        
     }
+ 
+ 
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
@@ -49,4 +58,5 @@ export class CreationCompteComponent implements OnInit {
         this.submitted = false;
         this.registerForm.reset();
     }
+   
   }
