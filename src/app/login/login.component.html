@@ -20,11 +20,11 @@
                   <!--(ngSubmit)="continuer()" #myform="ngForm"-->
                   <form class="user"   >
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail"  placeholder="votre Email"
+                      <input type="text" name="username" [(ngModel)]="username" class="form-control form-control-user" id="exampleInputEmail"  placeholder="votre Email"
                       >
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="votre mot de passe"
+                      <input type="password" name="password" [(ngModel)]="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="votre mot de passe"
                       >
                     </div>
                     <br> <br>
@@ -41,8 +41,7 @@
                     
                   </a>
                      -->
-                     <button class="btn btn-primary btn-user btn-block">  continuer </button>
-                      
+                     <button class="btn btn-success" (click)="checkLogin()">  continuer </button>                     
                     
                     
                     <hr>

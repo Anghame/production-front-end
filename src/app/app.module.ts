@@ -28,6 +28,10 @@ import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { GestionProduitComponent } from './gestion-produit/gestion-produit.component';
 import { DiffuserNotifComponent } from './diffuser-notif/diffuser-notif.component';
 import { NotifsComponent } from './notifs/notifs.component';
+import { LogoutComponent } from './logout/logout.component';
+import { BasicAuthHtppInterceptorService } from './service/basic-auth-htpp-interceptor.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthenticateService } from './service/authenticate.service';
 
 
 
@@ -75,7 +79,8 @@ import { NotifsComponent } from './notifs/notifs.component';
     AjoutClientComponent,
     GestionProduitComponent,
     DiffuserNotifComponent,
-    NotifsComponent
+    NotifsComponent,
+    LogoutComponent
   
    
   
@@ -87,10 +92,13 @@ import { NotifsComponent } from './notifs/notifs.component';
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
+    HttpClientModule
   
     
   ],
-  providers: [],
+  providers: [AuthenticateService
+   
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

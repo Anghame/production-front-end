@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-/* import { User } from '../Class/user';*/ 
+import { Router } from '@angular/router';
+import { AuthenticateService } from '../service/authenticate.service';
 
 @Component({
   selector: 'app-login',
@@ -7,32 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
- /* user:User; */
 
+  username = ''
+  password = ''
+  invalidLogin = false
 
-    constructor() { }
+  constructor(private router: Router,
+    private loginservice: AuthenticateService) { }
 
-    ngOnInit() {
-        
-    }
-    
+  ngOnInit() {
+  }
 
-    /*
-    this.user=new User();
-    */
-  
-  }  
-  /* 
-continuer()
-{
-  
-    if((this.user.email=="admin@gmail.com")||(this.user.mdp=="admin"))
-    {
-window.location.replace("inscription");
-    }
-    else
-    {
-      alert("compte non reconnue!");
-    }
-  
-}*/
+  checkLogin() {
+    (this.loginservice.authenticate(this.username, this.password).subscribe(
+      data => {
+        this.router.navigate([''])
+        this.invalidLogin = false
+      },
+      error => {
+        this.invalidLogin = true
+
+      }
+    )
+    );
+
+  }
+
+}

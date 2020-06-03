@@ -18,7 +18,8 @@ import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { GestionProduitComponent } from './gestion-produit/gestion-produit.component';
 import { DiffuserNotifComponent } from './diffuser-notif/diffuser-notif.component';
 import { NotifsComponent } from './notifs/notifs.component';
-
+import { LogoutComponent } from './logout/logout.component';
+import { AuthGaurdService } from './service/auth-gaurd.service';
 
 const routes: Routes = [{
   path:'',
@@ -26,7 +27,7 @@ const routes: Routes = [{
 },
 {
   path:'gestionUser',
-  component:GestionUserComponent
+  component:GestionUserComponent,canActivate:[AuthGaurdService]
 },
 
 { path:'login',
@@ -34,32 +35,32 @@ component:LoginComponent
   
 },
 { path:'ajoutOf',
-component:AjoutOFComponent
+component:AjoutOFComponent, canActivate:[AuthGaurdService]
   
 },
 
 { path:'ajoutProduit',
-component:AjoutProduitComponent
+component:AjoutProduitComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'gestionProduit',
-component:GestionProduitComponent
+component:GestionProduitComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'ajoutClient',
-component:AjoutClientComponent
+component:AjoutClientComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'gestionOf',
-component:GestionOfComponent
+component:GestionOfComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'ordresFab',
-component:GestionOrdreFabComponent
+component:GestionOrdreFabComponent,canActivate:[AuthGaurdService]
   
 },
 { path:'creationCompte',
-component:CreationCompteComponent
+component:CreationCompteComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'home',
@@ -71,11 +72,11 @@ component:TableauComponent
   
 },
 { path:'homeEm',
-component:HomeEmComponent
+component:HomeEmComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'homeRp',
-component:HomeRPComponent
+component:HomeRPComponent,canActivate:[AuthGaurdService]
   
 },
 { path:'props',
@@ -87,15 +88,17 @@ component:ChartsRapportComponent
   
 },
 { path:'diffuserNotif',
-component:DiffuserNotifComponent
+component:DiffuserNotifComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'Notifs',
-component:NotifsComponent
+component:NotifsComponent, canActivate:[AuthGaurdService]
   
-}
+},
+{ path: 'logout', 
+component: LogoutComponent, canActivate:[AuthGaurdService] 
 
-
+},
 
 ];
 
