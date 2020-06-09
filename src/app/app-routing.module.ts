@@ -18,12 +18,17 @@ import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { GestionProduitComponent } from './gestion-produit/gestion-produit.component';
 import { DiffuserNotifComponent } from './diffuser-notif/diffuser-notif.component';
 import { NotifsComponent } from './notifs/notifs.component';
+<<<<<<< HEAD
 import { RapportsComponent } from './rapports/rapports.component';
 import { ConsulterSeuilComponent } from './consulter-seuil/consulter-seuil.component';
 import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
 import { InfosPersoComponent } from './infos-perso/infos-perso.component';
 
+=======
+import { LogoutComponent } from './logout/logout.component';
+import { AuthGaurdService } from './service/auth-gaurd.service';
+>>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
 
 const routes: Routes = [{
   path:'',
@@ -31,7 +36,7 @@ const routes: Routes = [{
 },
 {
   path:'gestionUser',
-  component:GestionUserComponent
+  component:GestionUserComponent,canActivate:[AuthGaurdService]
 },
 
 { path:'login',
@@ -39,20 +44,20 @@ component:LoginComponent
   
 },
 { path:'ajoutOf',
-component:AjoutOFComponent
+component:AjoutOFComponent, canActivate:[AuthGaurdService]
   
 },
 
 { path:'ajoutProduit',
-component:AjoutProduitComponent
+component:AjoutProduitComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'gestionProduit',
-component:GestionProduitComponent
+component:GestionProduitComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'ajoutClient',
-component:AjoutClientComponent
+component:AjoutClientComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'gestionClient',
@@ -60,15 +65,15 @@ component:GestionClientComponent
   
 },
 { path:'gestionOf',
-component:GestionOfComponent
+component:GestionOfComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'ordresFab',
-component:GestionOrdreFabComponent
+component:GestionOrdreFabComponent,canActivate:[AuthGaurdService]
   
 },
 { path:'creationCompte',
-component:CreationCompteComponent
+component:CreationCompteComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'home',
@@ -80,11 +85,11 @@ component:TableauComponent
   
 },
 { path:'homeEm',
-component:HomeEmComponent
+component:HomeEmComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'homeRp',
-component:HomeRPComponent
+component:HomeRPComponent,canActivate:[AuthGaurdService]
   
 },
 { path:'props',
@@ -96,13 +101,14 @@ component:RapportsComponent
   
 },
 { path:'diffuserNotif',
-component:DiffuserNotifComponent
+component:DiffuserNotifComponent, canActivate:[AuthGaurdService]
   
 },
 { path:'Notifs',
-component:NotifsComponent
+component:NotifsComponent, canActivate:[AuthGaurdService]
   
 },
+<<<<<<< HEAD
 { path:'consultSeuil',
 component:ConsulterSeuilComponent
   
@@ -117,7 +123,12 @@ component:InfosPersoComponent
 },
 
 
+=======
+{ path: 'logout', 
+component: LogoutComponent, canActivate:[AuthGaurdService] 
+>>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
 
+},
 
 ];
 

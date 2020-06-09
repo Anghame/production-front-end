@@ -30,6 +30,7 @@ import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { GestionProduitComponent } from './gestion-produit/gestion-produit.component';
 import { DiffuserNotifComponent } from './diffuser-notif/diffuser-notif.component';
 import { NotifsComponent } from './notifs/notifs.component';
+<<<<<<< HEAD
 import { RapportsComponent } from './rapports/rapports.component';
 import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
 import { MyDoughnutChartComponent } from './my-doughnut-chart/my-doughnut-chart.component';
@@ -39,6 +40,12 @@ import { InfosPersoComponent } from './infos-perso/infos-perso.component';
 import { ConsulterSeuilComponent } from './consulter-seuil/consulter-seuil.component';
 import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
+=======
+import { LogoutComponent } from './logout/logout.component';
+import { BasicAuthHtppInterceptorService } from './service/basic-auth-htpp-interceptor.service';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthenticateService } from './service/authenticate.service';
+>>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
 
 
 
@@ -95,6 +102,7 @@ const routes: Routes = [
     GestionProduitComponent,
     DiffuserNotifComponent,
     NotifsComponent,
+<<<<<<< HEAD
     RapportsComponent,
     MyBarChartComponent,
     MyDoughnutChartComponent,
@@ -105,6 +113,9 @@ const routes: Routes = [
     DefinirSeuilComponent,
     GestionClientComponent,
 
+=======
+    LogoutComponent
+>>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
   
    
   
@@ -115,6 +126,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
+<<<<<<< HEAD
     BrowserModule,
     RouterModule.forRoot(routes),
   
@@ -124,6 +136,15 @@ const routes: Routes = [
   ],
  
   providers: [],
+=======
+    HttpClientModule
+  
+    
+  ],
+  providers: [AuthenticateService
+   
+  ],
+>>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
   bootstrap: [AppComponent]
 })
 export class AppModule { }
