@@ -82,21 +82,22 @@
                                 <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">
                                     <h6 [ngStyle]="{color:'white' }"> </h6></th>
                             </thead>
+                        
                             <tbody>
-                                <tr *ngFor="let users of user | async">
-                                    <td>{{users.id}}</td>
-                                    <td>{{users.nom}}</td>
-                                    <td>{{users.prenom}</td>
-                                    <td>{{users.cin}}</td>
-                                    <td>{{users.role}}</td>
-                                    <td>{{users.idUser}}</td>
+                                <tr > <!-- *ngFor="let users of user | async"-->
+                                    <td></td><!--{{users.id}} -->
+                                    <td></td><!--{{users.nom}} -->
+                                    <td></td><!--{{users.prenom}} -->
+                                    <td></td><!--{{users.cin}} -->
+                                    <td></td><!--{{users.role}} -->
+                                    <td></td><!--{{users.idUser}} -->
                                     <td>
                                         <div class="fixed-table-toolbar">
                                             <div class="bs-bars pull-left">
                                                 <div class="toolbar">
                                                 
                                                     <button  class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
-                                                    <button (click)="delete(users.idUser)"class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+                                                    <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button> <!--(click)="delete(users.idUser)"-->
                                                 </div>
                                             </div>
                                            

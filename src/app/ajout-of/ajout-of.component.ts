@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng4-validators';
+import { OrdreFabricationService } from 'src/app/ordre-fabrication.service';
+import {OrdreFab} from 'src/app/Class/ordre-fab'; 
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-ajout-of',
@@ -10,7 +13,7 @@ import { CustomValidators } from 'ng4-validators';
 export class AjoutOFComponent implements OnInit {
   ajoutOfForm: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder ,private ordreFabService:OrdreFabricationService) { }
 
   ngOnInit() {
       this.ajoutOfForm = this.formBuilder.group({
@@ -29,6 +32,8 @@ export class AjoutOFComponent implements OnInit {
 
   onSubmit() {
       this.submitted = true;
+      
+      this.save();
 
       // stop here if form is invalid
       if (this.ajoutOfForm.invalid) {
@@ -43,4 +48,23 @@ export class AjoutOFComponent implements OnInit {
       this.submitted = false;
       this.ajoutOfForm.reset();
   }
+  //service 
+  ordreFab:  OrdreFab = new  OrdreFab();
+
+  
+    
+
+  
+    add(): void {
+      this.submitted = false;
+      this.ordreFab = new OrdreFab();
+    }
+  
+    save() {
+      this.ordreFabService.add(this.ordreFab)
+        .subscribe(data => console.log(data), error => console.log(error));
+      this.ordreFab= new OrdreFab();
+    }
+  
+  
 }

@@ -18,7 +18,7 @@ export class CreationCompteComponent implements OnInit {
   registerForm: FormGroup;
     submitted = false;
 
-    constructor(private formBuilder: FormBuilder) { 
+    constructor(private formBuilder: FormBuilder , private utilisateurService: UtilisateurService) { 
         
     }
 
@@ -38,7 +38,30 @@ export class CreationCompteComponent implements OnInit {
         });
         
     }
- 
+    /*
+    user: User = new User();
+
+  
+    
+
+  
+    saveUser(): void {
+      this.submitted = false;
+      this.user = new User();
+    }
+  
+    save() {
+      this.utilisateurService.saveUser(this.user)
+        .subscribe(data => console.log(data), error => console.log(error));
+      this.user = new User();
+    }
+  
+    onSubmit1() {
+      this.submitted = true;
+      this.save();
+    }
+  */
+ //controle..
  
     get f() { return this.registerForm.controls; }
 

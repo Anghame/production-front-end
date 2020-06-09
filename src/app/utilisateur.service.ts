@@ -15,7 +15,7 @@ export class UtilisateurService {
   getEmployee(id: number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }*/
-
+/*
   saveUser(utilisateur: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, utilisateur).pipe(map(res=>{return res;}));
 
@@ -31,5 +31,5 @@ export class UtilisateurService {
 
   getAll(): Observable<any> {
     return this.http.get(`${this.baseUrl}`).pipe(map(res=>{return res;}));
-  }
+  }*/
 }

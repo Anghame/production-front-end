@@ -9,11 +9,13 @@ import {Observable} from 'rxjs';
   styleUrls: ['./gestion-user.component.css']
 })
 export class GestionUserComponent implements OnInit {
-  user:Observable<User[]>;
+  //user:Observable<User[]>;
 
   constructor(private userService:UtilisateurService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+}
+    /*
     this.reloadData();
     }
     reloadData(){
@@ -22,7 +24,7 @@ export class GestionUserComponent implements OnInit {
    delete(idUser:number){
     this.userService.delete(idUser).subscribe(data=>{console.log(data);this.reloadData();},error=>console.log(error));}
     
-  }
+  }*/
  
 
 
