@@ -47,6 +47,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthenticateService } from './service/authenticate.service';
 >>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
 
+<<<<<<< HEAD
 
 
 const routes: Routes = [
@@ -57,6 +58,9 @@ const routes: Routes = [
 
 ];
 
+=======
+/*import { authInterceptorProviders } from './_helpers/auth.interceptor';*/
+>>>>>>> d7b18556d583f559a242077a04bd00ebbb2dd482
 
 @NgModule({
   declarations: [
@@ -141,10 +145,14 @@ const routes: Routes = [
   
     
   ],
+<<<<<<< HEAD
   providers: [AuthenticateService
    
   ],
 >>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
+=======
+  providers: [/*authInterceptorProviders*/],
+>>>>>>> d7b18556d583f559a242077a04bd00ebbb2dd482
   bootstrap: [AppComponent]
 })
 export class AppModule { }

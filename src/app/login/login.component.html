@@ -1,5 +1,5 @@
 <div [style.background]="'url(./assets/img/background1.jpg)'">
-<div class="container ">
+  <div class="container ">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -10,22 +10,62 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-             <!--  <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
-             <img class="col-lg-6 d-none d-lg-block " src="assets/img/login11.png" alt="" />
+              <!--  <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
+              <img class="col-lg-6 d-none d-lg-block " src="assets/img/login11.png" alt="" />
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Connectez-Vous <br> <br> <br> <br> </h1>
                   </div>
                   <!--(ngSubmit)="continuer()" #myform="ngForm"-->
-                  <form class="user"   >
+                  <form class="user" 
+                  *ngIf="!isLoggedIn" 
+                  name="form" 
+                  (ngSubmit)="f.form.valid && onSubmit()" 
+                  #f="ngForm"
+                  novalidate
+                  >
                     <div class="form-group">
-                      <input type="text" name="username" [(ngModel)]="username" class="form-control form-control-user" id="exampleInputEmail"  placeholder="votre Email"
+                      <input 
+                      type="text"
+                      class="form-control form-control-user" 
+                      name="username" 
+                      [(ngModel)]="form.username" 
+                      required
+                      #username="ngModel"
+                      id="exampleInputEmail" 
+                      placeholder="votre Email"
+                      />
+                      <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="f.submitted && username.invalid"
                       >
+                      Username is required!
+                     </div>
                     </div>
                     <div class="form-group">
-                      <input type="password" name="password" [(ngModel)]="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="votre mot de passe"
+                      <input 
+                      type="password"
+                      class="form-control form-control-user" 
+                      name="password" 
+                      [(ngModel)]="password"
+                      required
+                      minlength="6"
+                      #password="ngModel"
+                      id="exampleInputPassword"
+                      placeholder="votre mot de passe"
+                      />
+                      <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="f.1submitted && password.invalid"
                       >
+                      <div *ngIf="password.errors.required">Password is required</div>
+                      <div *ngIf="password.errors.minlength">
+                      Password must be at least 6 characters
+                      </div>
+                      </div>
                     </div>
                     <br> <br>
                     <div class="form-group">
@@ -34,25 +74,43 @@
                         <label class="custom-control-label" for="customCheck">Enregistrer le mot de passe</label>
                       </div>
                     </div>
-                   
-                     
-                     <!--  
+
+
+                    <!--  
                     <a [routerLink]="['/home']"> 
                     
                   </a>
                      -->
-                     <button class="btn btn-success" (click)="checkLogin()">  continuer </button>                     
-                    
-                    
+                  <div class="form-group">
+                    <button class="btn btn-success" > 
+                      continuer 
+                    </button>
+                  </div>
+
+                  <div class="form-group">
+                    <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="f.submitted && isLoginFailed"
+                    >
+                      Login failed: {{ errorMessage }}
+                    </div>
+                  </div>
+
                     <hr>
-                   
-                  
+
+
                   </form>
+
+                  <div class="alert alert-success" *ngIf="isLoggedIn">
+                    Logged in as {{ roles }}.
+                  </div>
+                  
                   <hr>
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Mot de passe oublié?</a>
                   </div>
-                 
+
                 </div>
               </div>
             </div>
@@ -62,9 +120,7 @@
       </div>
 
     </div>
-    
+
 
   </div>
-  </div>
-
-
+</div>
