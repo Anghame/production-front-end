@@ -33,8 +33,7 @@ import { BasicAuthHtppInterceptorService } from './service/basic-auth-htpp-inter
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthenticateService } from './service/authenticate.service';
 
-
-
+/*import { authInterceptorProviders } from './_helpers/auth.interceptor';*/
 
 @NgModule({
   declarations: [
@@ -96,9 +95,7 @@ import { AuthenticateService } from './service/authenticate.service';
   
     
   ],
-  providers: [AuthenticateService
-   
-  ],
+  providers: [/*authInterceptorProviders*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
