@@ -18,17 +18,12 @@ import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { GestionProduitComponent } from './gestion-produit/gestion-produit.component';
 import { DiffuserNotifComponent } from './diffuser-notif/diffuser-notif.component';
 import { NotifsComponent } from './notifs/notifs.component';
-<<<<<<< HEAD
 import { RapportsComponent } from './rapports/rapports.component';
 import { ConsulterSeuilComponent } from './consulter-seuil/consulter-seuil.component';
 import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
 import { InfosPersoComponent } from './infos-perso/infos-perso.component';
 
-=======
-import { LogoutComponent } from './logout/logout.component';
-import { AuthGaurdService } from './service/auth-gaurd.service';
->>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
 
 const routes: Routes = [{
   path:'',
@@ -108,7 +103,6 @@ component:DiffuserNotifComponent, canActivate:[AuthGaurdService]
 component:NotifsComponent, canActivate:[AuthGaurdService]
   
 },
-<<<<<<< HEAD
 { path:'consultSeuil',
 component:ConsulterSeuilComponent
   
@@ -123,10 +117,6 @@ component:InfosPersoComponent
 },
 
 
-=======
-{ path: 'logout', 
-component: LogoutComponent, canActivate:[AuthGaurdService] 
->>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
 
 },
 
