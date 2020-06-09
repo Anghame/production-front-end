@@ -31,13 +31,13 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
         <i class="fas fa-fw fa-cog"></i>
-        <span>les seuils de production</span>
+        <span>les seuils de production</span> 
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">seuils:</h6>
-          <a class="collapse-item" href="buttons.html">Définir un <br>nouveau seuil</a>
-          <a class="collapse-item" href="cards.html">consulter le <br> seuil actuel </a>
+          <a class="collapse-item" [routerLink]="['/defSeuil']">Définir un <br>nouveau seuil</a>
+          <a class="collapse-item"[routerLink]="['/consultSeuil']">consulter le <br> seuil actuel </a>
         </div>
       </div>
     </li>
@@ -47,7 +47,7 @@
         <span>le tableau de bord</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="tables.html">
+      <a class="nav-link" [routerLink]="['/rapports']">
         <i class="fas fa-fw fa-table"></i>
         <span>les rapports</span></a>
     
@@ -95,7 +95,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Gestion des Clients :</h6>
           <a class="collapse-item" [routerLink]="['/ajoutClient']">Ajout Client</a>
-          <a class="collapse-item" [routerLink]="['/gestionUser']">Suppression/modification  <br>des Clients </a>
+          <a class="collapse-item" [routerLink]="['/gestionClient']">Suppression/modification  <br>des Clients </a>
         
   
         </div>

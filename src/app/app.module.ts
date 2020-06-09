@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
+import { ChartsModule } from 'ng2-charts';
+import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './utiles/sidebar/sidebar.component';
@@ -28,12 +30,37 @@ import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { GestionProduitComponent } from './gestion-produit/gestion-produit.component';
 import { DiffuserNotifComponent } from './diffuser-notif/diffuser-notif.component';
 import { NotifsComponent } from './notifs/notifs.component';
+<<<<<<< HEAD
+import { RapportsComponent } from './rapports/rapports.component';
+import { MyBarChartComponent } from './my-bar-chart/my-bar-chart.component';
+import { MyDoughnutChartComponent } from './my-doughnut-chart/my-doughnut-chart.component';
+import { MyRadarChartComponent } from './my-radar-chart/my-radar-chart.component';
+import { MyPieChartComponent } from './my-pie-chart/my-pie-chart.component';
+import { InfosPersoComponent } from './infos-perso/infos-perso.component';
+import { ConsulterSeuilComponent } from './consulter-seuil/consulter-seuil.component';
+import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
+import { GestionClientComponent } from './gestion-client/gestion-client.component';
+=======
 import { LogoutComponent } from './logout/logout.component';
 import { BasicAuthHtppInterceptorService } from './service/basic-auth-htpp-interceptor.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthenticateService } from './service/authenticate.service';
+>>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
 
+<<<<<<< HEAD
+
+
+const routes: Routes = [
+  {path: 'bar-chart', component: MyBarChartComponent},
+  {path: 'doughnut-chart', component: MyDoughnutChartComponent},
+  {path: 'radar-chart', component: MyRadarChartComponent},
+  {path: 'pie-chart', component: MyPieChartComponent},
+
+];
+
+=======
 /*import { authInterceptorProviders } from './_helpers/auth.interceptor';*/
+>>>>>>> d7b18556d583f559a242077a04bd00ebbb2dd482
 
 @NgModule({
   declarations: [
@@ -79,10 +106,22 @@ import { AuthenticateService } from './service/authenticate.service';
     GestionProduitComponent,
     DiffuserNotifComponent,
     NotifsComponent,
+<<<<<<< HEAD
+    RapportsComponent,
+    MyBarChartComponent,
+    MyDoughnutChartComponent,
+    MyRadarChartComponent,
+    MyPieChartComponent,
+    InfosPersoComponent,
+    ConsulterSeuilComponent,
+    DefinirSeuilComponent,
+    GestionClientComponent,
+
+=======
     LogoutComponent
+>>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
   
    
-  
   
   
   ],
@@ -91,11 +130,29 @@ import { AuthenticateService } from './service/authenticate.service';
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
+<<<<<<< HEAD
+    BrowserModule,
+    RouterModule.forRoot(routes),
+  
+    ChartsModule
+  
+    
+  ],
+ 
+  providers: [],
+=======
     HttpClientModule
   
     
   ],
+<<<<<<< HEAD
+  providers: [AuthenticateService
+   
+  ],
+>>>>>>> 1c11e4a7441820f839bac09f36c56d9b33cf5ea7
+=======
   providers: [/*authInterceptorProviders*/],
+>>>>>>> d7b18556d583f559a242077a04bd00ebbb2dd482
   bootstrap: [AppComponent]
 })
 export class AppModule { }

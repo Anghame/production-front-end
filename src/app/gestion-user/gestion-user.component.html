@@ -23,11 +23,7 @@
           
                         <div class="fixed-table-toolbar">
                             <div class="bs-bars pull-left">
-                                <div class="toolbar">
-                                
-                                    <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
-                                    <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
-                                </div>
+                              
                             </div>
                             <div class="columns columns-right btn-group pull-right">
                                 <button name="refresh" title="Refresh" 
@@ -79,21 +75,36 @@
                         <table id="fresh-table" class="table">
                             <thead>
                                 <th data-field="id"><h6 [ngStyle]="{color:'white' }"> ID </h6></th>
-                                <th data-field="name" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">  Nom&Prénom </h6></th>
-                                <th data-field="salary" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">CIN</h6></th>
-                                <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">salaire</h6></th>
+                                <th data-field="name" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">  Nom </h6></th>
+                                <th data-field="salary" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">Prénom</h6></th>
+                                <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">CIN</h6></th>
                                 <th data-field="city"> <h6 [ngStyle]="{color:'white' }">Poste </h6></th>
                                 <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">
-                                    <h6 [ngStyle]="{color:'white' }"> Actions </h6></th>
+                                    <h6 [ngStyle]="{color:'white' }"> </h6></th>
                             </thead>
+                        
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                <tr > <!-- *ngFor="let users of user | async"-->
+                                    <td></td><!--{{users.id}} -->
+                                    <td></td><!--{{users.nom}} -->
+                                    <td></td><!--{{users.prenom}} -->
+                                    <td></td><!--{{users.cin}} -->
+                                    <td></td><!--{{users.role}} -->
+                                    <td></td><!--{{users.idUser}} -->
+                                    <td>
+                                        <div class="fixed-table-toolbar">
+                                            <div class="bs-bars pull-left">
+                                                <div class="toolbar">
+                                                
+                                                    <button  class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
+                                                    <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button> <!--(click)="delete(users.idUser)"-->
+                                                </div>
+                                            </div>
+                                           
+                                    
+                                        </div>
+                                    </td>
+                                         
                                     
                                 </tr>
                                 <tr>
@@ -103,7 +114,20 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td>
+                                        <div class="fixed-table-toolbar">
+                                            <div class="bs-bars pull-left">
+                                                <div class="toolbar">
+                                                
+                                                    <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
+                                                    <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+                                                </div>
+                                            </div>
+                                           
                                     
+                                        </div>
+                                    </td>
+                                         
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -112,6 +136,20 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td>
+                                        <div class="fixed-table-toolbar">
+                                            <div class="bs-bars pull-left">
+                                                <div class="toolbar">
+                                                
+                                                    <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
+                                                    <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+                                                </div>
+                                            </div>
+                                           
+                                    
+                                        </div>
+                                    </td>
+                                         
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -120,6 +158,20 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td>
+                                        <div class="fixed-table-toolbar">
+                                            <div class="bs-bars pull-left">
+                                                <div class="toolbar">
+                                                
+                                                    <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
+                                                    <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+                                                </div>
+                                            </div>
+                                           
+                                    
+                                        </div>
+                                    </td>
+                                         
                                 </tr>
                             </tbody>
 

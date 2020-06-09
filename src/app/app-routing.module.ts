@@ -18,8 +18,13 @@ import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { GestionProduitComponent } from './gestion-produit/gestion-produit.component';
 import { DiffuserNotifComponent } from './diffuser-notif/diffuser-notif.component';
 import { NotifsComponent } from './notifs/notifs.component';
-import { LogoutComponent } from './logout/logout.component';
+import { RapportsComponent } from './rapports/rapports.component';
+import { ConsulterSeuilComponent } from './consulter-seuil/consulter-seuil.component';
+import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
+import { GestionClientComponent } from './gestion-client/gestion-client.component';
+import { InfosPersoComponent } from './infos-perso/infos-perso.component';
 
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [{
   path:'',
@@ -49,6 +54,10 @@ component:GestionProduitComponent
 },
 { path:'ajoutClient',
 component:AjoutClientComponent
+  
+},
+{ path:'gestionClient',
+component:GestionClientComponent
   
 },
 { path:'gestionOf',
@@ -83,8 +92,8 @@ component:HomeRPComponent
 component:PropsComponent
   
 },
-{ path:'charts',
-component:ChartsRapportComponent
+{ path:'rapports',
+component:RapportsComponent
   
 },
 { path:'diffuserNotif',
@@ -95,8 +104,25 @@ component:DiffuserNotifComponent
 component:NotifsComponent
   
 },
+
+{ path:'consultSeuil',
+component:ConsulterSeuilComponent
+  
+},
+{ path:'defSeuil',
+component:DefinirSeuilComponent
+  
+},
+{ path:'infoPerso',
+component:InfosPersoComponent
+  
+},
+
+
+
 { path: 'logout', 
 component: LogoutComponent
+
 
 },
 

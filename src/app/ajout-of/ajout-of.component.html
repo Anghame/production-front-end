@@ -2,6 +2,14 @@
 
 
     <div class="container">
+      <a  [routerLink]="['/home']">
+        <div class="logo-container">
+           
+            <div class="brand">
+              Page d'accueil
+            </div>
+        </div>
+    </a>
     
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -19,7 +27,7 @@
                       <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4"  [ngStyle]="{color:'blue' }"> Ajout d'un Ordre de fabrication </h1>
                       </div>
-                      <form class="user" [formGroup]="ajoutOfForm" (ngSubmit)="onSubmit()">
+                      <form class="user" [formGroup]="ajoutOfForm"  (ngSubmit)=" onSubmit()">
                         <div class="form-group">
                              <label>  <i> l'identifiant  d'un OF:</i></label>
                              <input type="text"class="form-control form-control-user" id="idOF"  placeholder="l'identifiant"
@@ -34,46 +42,9 @@
                             l'identifiant doit comporter au moins 6 caractères</div>
                       </div>
                         </div>
-                        <div class="form-group">
-                            <label> <i> l'identifiant du Client :</i> </label>
-                             <input type="text" class="form-control form-control-user" id="idClient"  placeholder="nom"
-                             formControlName="idClient"
-                             class="form-control"
-  
-                           [ngClass]="{ 'is-invalid': submitted && f.idClient.errors }">
-                           
-                           <div *ngIf="submitted && f.idClient.errors" class="invalid-feedback">
-                            <div *ngIf="f.idClient.errors.required">identifiant de client  est requis</div>
-                            <div *ngIf="f.idClient.errors.minlength">l'identifiant de client doit comporter au moins 6 caractères</div>
-                        </div>
-                          </div>
-                          <div class="form-group">
-                            <label> <i> l'identifiant de produit concerné de <br>l'ordre de fabrication:</i></label>
-                             <input type="text" class="form-control form-control-user" id="idProduit" placeholder="produit"
-                             formControlName="idProduit"
-                             class="form-control"
-  
-                           [ngClass]="{ 'is-invalid': submitted && f.idProduit.errors }">
-                           
-                           <div *ngIf="submitted && f.idProduit.errors" class="invalid-feedback">
-                            <div *ngIf="f.idProduit.errors.required">identifiant de produit  est requis</div>
-                            <div *ngIf="f.idProduit.errors.minlength">l'identifiant de produit doit comporter au moins 6 caractères</div>
-                        </div>
-                          </div>
-                          <div class="form-group">
-                            <label>  <i> la référence de la commande de client:</i> </label>
-                             <input type="text" class="form-control form-control-user" id="refCommande"  placeholder="référence de la commande 
-                            "
-                            formControlName="refCommande"
-                            class="form-control"
- 
-                          [ngClass]="{ 'is-invalid': submitted && f.refCommande.errors }">
+                       
                           
-                          <div *ngIf="submitted && f.refCommande.errors" class="invalid-feedback">
-                           <div *ngIf="f.refCommande.errors.required">la référence de la commande de client est requis</div>
-                           <div *ngIf="f.refCommande.errors.minlength">la référence de la commande de client <br> doit comporter au moins 6 caractères </div>
-                       </div>
-                          </div>
+                          
                           <div class="form-group">
                             <label>  <i> La quantité :</i> </label>
                              <input type="text" class="form-control form-control-user" id="quantite"  placeholder="quantité"
