@@ -1,17 +1,22 @@
 <div [style.background]="'url(./assets/img/background1.jpg)'">
+  <div><a href class="nav-link" (click)="logout()">LogOut</a></div>
   <div class="container ">
-
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
       <div class="col-xl-10 col-lg-12 col-md-9">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
+         
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
               <!--  <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
-              <img class="col-lg-6 d-none d-lg-block " src="assets/img/login11.png" alt="" />
+              <img class="col-lg-6 d-none d-lg-block " src="assets/img/login.jpg" alt="" />
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
@@ -45,12 +50,19 @@
                       Username is required! -->
                      </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" for="password">
                       <input 
                       type="password"
                       class="form-control form-control-user" 
                       name="password" 
+<<<<<<< HEAD
                      
+=======
+                      [(ngModel)]="form.password"
+                      required
+                      minlength="6"
+                      #password="ngModel"
+>>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
                       id="exampleInputPassword"
                       placeholder="votre mot de passe"
                       /> <!-- [(ngModel)]="password"
@@ -61,8 +73,13 @@
                       <div
                       class="alert alert-danger"
                       role="alert"
+<<<<<<< HEAD
                       *ngIf="f.1submitted && password.invalid"
                       > 
+=======
+                      *ngIf="f.submitted && password.invalid"
+                      >
+>>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
                       <div *ngIf="password.errors.required">Password is required</div>
                       <div *ngIf="password.errors.minlength">
                       Password must be at least 6 characters
@@ -125,4 +142,12 @@
 
 
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>

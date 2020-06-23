@@ -26,14 +26,19 @@ export class AppComponent implements OnInit{
       this.roles = user.roles; 
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showResponsableProdBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showResponsableProdBoard = this.roles.includes('ROLE_RESPONSABLEPROD');
 
       this.username = user.username;
     } */
   }
+<<<<<<< HEAD
 /*
   logout() {
     this.tokenStorageService.signOut();
     window.location.reload();
   } */
+=======
+
+  
+>>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
 }

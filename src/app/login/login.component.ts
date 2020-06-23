@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
 /*import { AuthenticateService } from '../service/authenticate.service';
+=======
+>>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
 import { TokenStorageService } from '../_services/token-storage.service';
 import { AuthService } from '../_services/auth.service';*/
 
@@ -48,5 +51,12 @@ export class LoginComponent implements OnInit {
   reloadPage() {
     window.location.reload();
   }
+<<<<<<< HEAD
 */
+=======
+  logout() {
+    this.tokenStorage.signOut();
+    window.location.reload();
+  }
+>>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
 }
