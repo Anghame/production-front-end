@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../_services/user.service';
+/*import { UserService } from '../../_services/user.service';*/
 
 @Component({
   selector: 'app-topbar',
@@ -9,9 +9,10 @@ import { UserService } from '../../_services/user.service';
 export class TopbarComponent implements OnInit {
   content: string;
 
-  constructor(private userService: UserService) { }
+  constructor() { } //private userService: UserService
 
   ngOnInit() {
+    /*
     this.userService.getPublicContent().subscribe(
       data => {
         this.content = data;
@@ -19,6 +20,6 @@ export class TopbarComponent implements OnInit {
       err => {
         this.content = JSON.parse(err.error).message;
       }
-    );
+    ); */
     }
 }

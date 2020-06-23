@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import {Client} from 'src/app/Class/client';
+import  {ClientService}  from 'src/app/client.service';
 
 @Component({
   selector: 'app-ajout-client',
@@ -11,14 +12,14 @@ export class AjoutClientComponent implements OnInit {
 
   ajoutClientForm: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder , private  clientService :ClientService ) { }
 
   ngOnInit() {
       this.ajoutClientForm = this.formBuilder.group({
           
-        idClient: ['', [Validators.required,Validators.minLength(6)]],
-        nomClient: ['', [Validators.required,Validators.minLength(6)]],
-        pClient: ['', [Validators.required, Validators.minLength(6)]],
+    
+        nomClient: ['', [Validators.required,Validators.minLength(4)]],
+        pClient: ['', [Validators.required, Validators.minLength(4)]],
         emailClient: ['', [Validators.required, Validators.email]],
      
         
@@ -28,6 +29,7 @@ export class AjoutClientComponent implements OnInit {
 
   onSubmit() {
       this.submitted = true;
+      this.save();
 
       // stop here if form is invalid
       if (this.ajoutClientForm.invalid) {
@@ -43,4 +45,21 @@ export class AjoutClientComponent implements OnInit {
       this.submitted = false;
       this.ajoutClientForm.reset();
   }
+  client:  Client = new  Client();
+
+  
+    
+
+  
+    add(): void {
+      this.submitted = false;
+      this.client = new Client();
+    }
+  
+    save() {
+      this.clientService.add(this.client)
+        .subscribe(data => console.log(data), error => console.log(error));
+      this.client= new Client();
+    }
+  
 }

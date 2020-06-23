@@ -31,7 +31,7 @@ const routes: Routes = [{
 },
 {
   path:'gestionUser',
-  component:GestionUserComponent,canActivate:[AuthGaurdService]
+  component:GestionUserComponent
 },
 
 { path:'login',
@@ -39,20 +39,20 @@ component:LoginComponent
   
 },
 { path:'ajoutOf',
-component:AjoutOFComponent, canActivate:[AuthGaurdService]
+component:AjoutOFComponent
   
 },
 
 { path:'ajoutProduit',
-component:AjoutProduitComponent, canActivate:[AuthGaurdService]
+component:AjoutProduitComponent
   
 },
 { path:'gestionProduit',
-component:GestionProduitComponent, canActivate:[AuthGaurdService]
+component:GestionProduitComponent
   
 },
 { path:'ajoutClient',
-component:AjoutClientComponent, canActivate:[AuthGaurdService]
+component:AjoutClientComponent
   
 },
 { path:'gestionClient',
@@ -60,15 +60,15 @@ component:GestionClientComponent
   
 },
 { path:'gestionOf',
-component:GestionOfComponent, canActivate:[AuthGaurdService]
+component:GestionOfComponent
   
 },
 { path:'ordresFab',
-component:GestionOrdreFabComponent,canActivate:[AuthGaurdService]
+component:GestionOrdreFabComponent
   
 },
 { path:'creationCompte',
-component:CreationCompteComponent, canActivate:[AuthGaurdService]
+component:CreationCompteComponent
   
 },
 { path:'home',
@@ -80,11 +80,11 @@ component:TableauComponent
   
 },
 { path:'homeEm',
-component:HomeEmComponent, canActivate:[AuthGaurdService]
+component:HomeEmComponent
   
 },
 { path:'homeRp',
-component:HomeRPComponent,canActivate:[AuthGaurdService]
+component:HomeRPComponent
   
 },
 { path:'props',
@@ -96,11 +96,11 @@ component:RapportsComponent
   
 },
 { path:'diffuserNotif',
-component:DiffuserNotifComponent, canActivate:[AuthGaurdService]
+component:DiffuserNotifComponent
   
 },
 { path:'Notifs',
-component:NotifsComponent, canActivate:[AuthGaurdService]
+component:NotifsComponent
   
 },
 { path:'consultSeuil',
@@ -118,7 +118,6 @@ component:InfosPersoComponent
 
 
 
-},
 
 ];
 

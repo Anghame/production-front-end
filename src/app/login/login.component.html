@@ -18,30 +18,31 @@
                     <h1 class="h4 text-gray-900 mb-4">Connectez-Vous <br> <br> <br> <br> </h1>
                   </div>
                   <!--(ngSubmit)="continuer()" #myform="ngForm"-->
-                  <form class="user" 
-                  *ngIf="!isLoggedIn" 
+                  <form class="user" >
+                 
+                  <!--  (ngSubmit)="f.form.valid && onSubmit()"
+                   *ngIf="!isLoggedIn" 
                   name="form" 
-                  (ngSubmit)="f.form.valid && onSubmit()" 
+                 
                   #f="ngForm"
-                  novalidate
-                  >
+                  novalidate-->
                     <div class="form-group">
                       <input 
                       type="text"
                       class="form-control form-control-user" 
                       name="username" 
-                      [(ngModel)]="form.username" 
-                      required
-                      #username="ngModel"
+                     
                       id="exampleInputEmail" 
                       placeholder="votre Email"
-                      />
+                      /> <!-- [(ngModel)]="form.username" 
+                        required
+                        #username="ngModel"-->
                       <div
-                      class="alert alert-danger"
-                      role="alert"
-                      *ngIf="f.submitted && username.invalid"
-                      >
-                      Username is required!
+                     
+                      > <!--  class="alert alert-danger"
+                        role="alert"
+                        *ngIf="f.submitted && username.invalid"
+                      Username is required! -->
                      </div>
                     </div>
                     <div class="form-group">
@@ -49,23 +50,24 @@
                       type="password"
                       class="form-control form-control-user" 
                       name="password" 
-                      [(ngModel)]="password"
-                      required
-                      minlength="6"
-                      #password="ngModel"
+                     
                       id="exampleInputPassword"
                       placeholder="votre mot de passe"
-                      />
+                      /> <!-- [(ngModel)]="password"
+                        required
+                        minlength="6"
+                        #password="ngModel"-->
+                      <!--
                       <div
                       class="alert alert-danger"
                       role="alert"
                       *ngIf="f.1submitted && password.invalid"
-                      >
+                      > 
                       <div *ngIf="password.errors.required">Password is required</div>
                       <div *ngIf="password.errors.minlength">
                       Password must be at least 6 characters
                       </div>
-                      </div>
+                      </div> -->
                     </div>
                     <br> <br>
                     <div class="form-group">
@@ -82,11 +84,11 @@
                   </a>
                      -->
                   <div class="form-group">
-                    <button class="btn btn-success" > 
+                    <button class="btn btn-primary btn-user btn-block" > 
                       continuer 
                     </button>
                   </div>
-
+<!--
                   <div class="form-group">
                     <div
                       class="alert alert-danger"
@@ -95,16 +97,16 @@
                     >
                       Login failed: {{ errorMessage }}
                     </div>
-                  </div>
+                  </div> -->
 
                     <hr>
 
 
                   </form>
-
+<!--
                   <div class="alert alert-success" *ngIf="isLoggedIn">
-                    Logged in as {{ roles }}.
-                  </div>
+                  Logged in as {{ roles }}.
+                  </div> -->
                   
                   <hr>
                   <div class="text-center">
