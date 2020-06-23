@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { TokenStorageService } from './_services/token-storage.service';
+import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  /*
+ 
   title="FProjet";
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
   showResponsableProdBoard = false;
   username: string;
-*/
-  constructor() { } //private tokenStorageService: TokenStorageService
+
+  constructor(private tokenStorageService: TokenStorageService) { } 
 
   ngOnInit() {
-    /*
+    
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
@@ -29,16 +29,10 @@ export class AppComponent implements OnInit{
       this.showResponsableProdBoard = this.roles.includes('ROLE_RESPONSABLEPROD');
 
       this.username = user.username;
-    } */
+    } 
   }
-<<<<<<< HEAD
-/*
-  logout() {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  } */
-=======
 
   
->>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
+
+  
 }

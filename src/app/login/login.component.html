@@ -1,17 +1,16 @@
 <div [style.background]="'url(./assets/img/background1.jpg)'">
-  <div><a href class="nav-link" (click)="logout()">LogOut</a></div>
+  <div >
+    <a href class="nav-link" (click)="logout() ">logOut</a>
+  </div>
   <div class="container ">
-    <br>
-    <br>
-    <br>
-    <br>
+
+
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
       <div class="col-xl-10 col-lg-12 col-md-9">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
-         
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
@@ -23,14 +22,14 @@
                     <h1 class="h4 text-gray-900 mb-4">Connectez-Vous <br> <br> <br> <br> </h1>
                   </div>
                   <!--(ngSubmit)="continuer()" #myform="ngForm"-->
-                  <form class="user" >
+                  <form class="user" (ngSubmit)="f.form.valid && onSubmit()"
+                  *ngIf="!isLoggedIn" 
+                 name="form" 
+                
+                 #f="ngForm"
+                 novalidate>
                  
-                  <!--  (ngSubmit)="f.form.valid && onSubmit()"
-                   *ngIf="!isLoggedIn" 
-                  name="form" 
-                 
-                  #f="ngForm"
-                  novalidate-->
+                  
                     <div class="form-group">
                       <input 
                       type="text"
@@ -39,15 +38,15 @@
                      
                       id="exampleInputEmail" 
                       placeholder="votre Email"
-                      /> <!-- [(ngModel)]="form.username" 
+                      [(ngModel)]="form.username" 
                         required
-                        #username="ngModel"-->
+                        #username="ngModel"/> 
                       <div
                      
-                      > <!--  class="alert alert-danger"
+                       class="alert alert-danger"
                         role="alert"
-                        *ngIf="f.submitted && username.invalid"
-                      Username is required! -->
+                        *ngIf="f.submitted && username.invalid" >
+                      Username is required!  
                      </div>
                     </div>
                     <div class="form-group" for="password">
@@ -55,36 +54,25 @@
                       type="password"
                       class="form-control form-control-user" 
                       name="password" 
-<<<<<<< HEAD
                      
-=======
-                      [(ngModel)]="form.password"
-                      required
-                      minlength="6"
-                      #password="ngModel"
->>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
                       id="exampleInputPassword"
                       placeholder="votre mot de passe"
-                      /> <!-- [(ngModel)]="password"
+                      [(ngModel)]="form.password"
                         required
                         minlength="6"
-                        #password="ngModel"-->
-                      <!--
+                        #password="ngModel"
+                      /> 
+                      
                       <div
                       class="alert alert-danger"
                       role="alert"
-<<<<<<< HEAD
-                      *ngIf="f.1submitted && password.invalid"
-                      > 
-=======
                       *ngIf="f.submitted && password.invalid"
-                      >
->>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
+                      > 
                       <div *ngIf="password.errors.required">Password is required</div>
                       <div *ngIf="password.errors.minlength">
                       Password must be at least 6 characters
                       </div>
-                      </div> -->
+                      </div>
                     </div>
                     <br> <br>
                     <div class="form-group">
@@ -105,7 +93,7 @@
                       continuer 
                     </button>
                   </div>
-<!--
+
                   <div class="form-group">
                     <div
                       class="alert alert-danger"
@@ -114,18 +102,18 @@
                     >
                       Login failed: {{ errorMessage }}
                     </div>
-                  </div> -->
+                  </div> 
 
-                    <hr>
+                  
 
 
                   </form>
-<!--
+
                   <div class="alert alert-success" *ngIf="isLoggedIn">
                   Logged in as {{ roles }}.
-                  </div> -->
+                  </div> 
                   
-                  <hr>
+                
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Mot de passe oublié?</a>
                   </div>
@@ -142,12 +130,4 @@
 
 
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 </div>

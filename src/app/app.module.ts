@@ -39,10 +39,7 @@ import { InfosPersoComponent } from './infos-perso/infos-perso.component';
 import { ConsulterSeuilComponent } from './consulter-seuil/consulter-seuil.component';
 import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
-<<<<<<< HEAD
-=======
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
->>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -120,36 +117,22 @@ const routes: Routes = [
     ReactiveFormsModule,
     BrowserModule,
     FormsModule,
-<<<<<<< HEAD
-
-    BrowserModule,
-    RouterModule.forRoot(routes),
-  
-    ChartsModule,
-    HttpClientModule
-=======
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
     ChartsModule
->>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
   
     
   ],
  
-<<<<<<< HEAD
-  providers: [],
-
   
 
   
 
-  //providers: [/*authInterceptorProviders*/]
-
-=======
   
+
   providers: [authInterceptorProviders,HttpClientModule],
->>>>>>> 1d55d237ae4cde21d0d87fb838ce30a1b365c442
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
