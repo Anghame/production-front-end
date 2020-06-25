@@ -5,7 +5,7 @@
     <div class="container">
       <a  [routerLink]="['/home']">
         <div class="logo-container">
-           
+                
             <div class="brand">
               Page d'accueil
             </div>
@@ -28,7 +28,7 @@
                       <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4"  [ngStyle]="{color:'blue' }"> Ajout Client </h1>
                       </div>
-                      <form class="user" [formGroup]="ajoutClientForm" (ngSubmit)="onSubmit()">
+                      <form class="user"   [formGroup]="ajoutClientForm" (ngSubmit)="onSubmit()">
                         
                         <div class="form-group">
                             <label> <i> le nom de client  :</i> </label>
@@ -76,7 +76,7 @@
                 
                        
                         
-                        <button class="btn btn-primary btn-user btn-block"> Ajouter</button>
+                        <button class="btn btn-primary btn-user btn-block" type="submit" > Ajouter</button>
                     <button class="btn btn-primary btn-user btn-block" type="reset" (click)="onReset()">Annuler</button>
                   
                         

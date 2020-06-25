@@ -23,6 +23,7 @@ import { ConsulterSeuilComponent } from './consulter-seuil/consulter-seuil.compo
 import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
 import { InfosPersoComponent } from './infos-perso/infos-perso.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 
 const routes: Routes = [{
@@ -113,6 +114,10 @@ component:DefinirSeuilComponent
 },
 { path:'infoPerso',
 component:InfosPersoComponent
+  
+},
+{ path:'forgetPassword',
+component:ForgetPasswordComponent
   
 },
 

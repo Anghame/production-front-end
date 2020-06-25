@@ -9,7 +9,7 @@ import  {ClientService}  from 'src/app/client.service';
   styleUrls: ['./ajout-client.component.css']
 })
 export class AjoutClientComponent implements OnInit {
-
+  client:  Client = new  Client();
   ajoutClientForm: FormGroup;
   submitted = false;
   constructor(private formBuilder: FormBuilder , private  clientService :ClientService ) { }
@@ -25,19 +25,22 @@ export class AjoutClientComponent implements OnInit {
         
       }, );
   }
-  get f() { return this.ajoutClientForm.controls; }
+  get f() 
+  { 
+    return this.ajoutClientForm.controls; }
 
   onSubmit() {
       this.submitted = true;
       this.save();
 
       // stop here if form is invalid
-      if (this.ajoutClientForm.invalid) {
-          return;
-      }
+     // if (this.ajoutClientForm.invalid) {
+       //   return;
+      //}
 
       // display form values on success
-      alert('utilisateur ajouté avexc succès ! :-)\n\n' + JSON.stringify(this.ajoutClientForm.value, null, 4));
+     // alert('utilisateur ajouté avexc succès ! :-)\n\n' +
+     // JSON.stringify(this.ajoutClientForm.value, null, 4));
   }
 
 
@@ -45,7 +48,7 @@ export class AjoutClientComponent implements OnInit {
       this.submitted = false;
       this.ajoutClientForm.reset();
   }
-  client:  Client = new  Client();
+  
 
   
     
