@@ -7,7 +7,8 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class OrdreFabricationService {
-  private baseUrl = '/suiviProd/ordreFabrication';
+  private baseUrl = 'https://suivi-prod.herokuapp.com/suiviProd/ordreFabrication/';
+  
 
   constructor(private http: HttpClient) { }
 /* get

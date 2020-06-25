@@ -44,22 +44,21 @@
                                  <th data-field="actions" > <h6 [ngStyle]="{color:'white' }"> Date de sortie  </h6></th>
                              </thead>
                              <tbody>
-                                 <tr>
-                                     <td> </td>
+                                 <tr *ngFor="let ordreFabs of ordreFab | async">
+                                     <td> {{ordreFabs.idOf}}</td>
                                      <td></td>
                                      <td></td>
                                      <td></td>
-                                     <td></td>
-                                     <td></td>
-                                    <td>   
-                                    </td>
+                                     <td>{{ordreFabs.quantite}}</td>
+                                     <td>{{ordreFabs.dateEntree}}</td>
+                                    <td>{{ordreFabs.dateSortie}}</td>
 <td>
     <div class="fixed-table-toolbar">
         <div class="bs-bars pull-left">
             <div class="toolbar">
             
                 <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
-                <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+                <button (click)="delete(ordreFabs.idOf)" class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
             </div>
         </div>
        

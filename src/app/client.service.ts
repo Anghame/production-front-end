@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ClientService {
-  private baseUrl = '/suiviProd/client';
+  private baseUrl = 'https://suivi-prod.herokuapp.com/suiviProd/client/';
 
   constructor(private http: HttpClient) { }
 /* get

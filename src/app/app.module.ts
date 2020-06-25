@@ -126,7 +126,13 @@ const routes: Routes = [
   ],
  
   
+
+  
+
+  
+
   providers: [authInterceptorProviders,HttpClientModule],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

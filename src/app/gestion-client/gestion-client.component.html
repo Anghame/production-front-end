@@ -43,12 +43,12 @@
                                  
                              </thead>
                              <tbody>
-                                 <tr>
-                                     <td> </td>
-                                     <td></td>
-                                     <td></td>
-                                     <td></td>
-                                     
+                                 <tr *ngFor="let clients of client | async">
+                                     <td>{{clients.idClient}}</td>
+                                     <td>{{clients.nom}}</td>
+                                     <td>{{clients.prenom}}</td>
+                                     <td>{{clients.email}}</td>
+                                
                                     <td>   
                                     </td>
 <td>
@@ -57,7 +57,7 @@
             <div class="toolbar">
             
                 <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
-                <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+                <button (click)="delete(clients.idClient)" class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
             </div>
         </div>
        

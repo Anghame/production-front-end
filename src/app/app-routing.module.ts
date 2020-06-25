@@ -24,7 +24,6 @@ import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
 import { InfosPersoComponent } from './infos-perso/infos-perso.component';
 
-import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [{
   path:'',
@@ -104,7 +103,6 @@ component:DiffuserNotifComponent
 component:NotifsComponent
   
 },
-
 { path:'consultSeuil',
 component:ConsulterSeuilComponent
   
@@ -120,11 +118,6 @@ component:InfosPersoComponent
 
 
 
-{ path: 'logout', 
-component: LogoutComponent
-
-
-},
 
 ];
 

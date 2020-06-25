@@ -10,9 +10,10 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 export class TopbarComponent implements OnInit {
   content: string;
 
-  constructor(private userService: UserService, private tokenStorage: TokenStorageService) { }
+  constructor(private userService: UserService,private tokenStorage:TokenStorageService) { } //
 
   ngOnInit() {
+
     this.userService.getPublicContent().subscribe(
       data => {
         this.content = data;
@@ -22,8 +23,10 @@ export class TopbarComponent implements OnInit {
       }
     );
     }
-    logout() {
+    logout(){
       this.tokenStorage.signOut();
       window.location.reload();
+
     }
+    
 }

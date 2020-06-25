@@ -18,7 +18,7 @@ export class CreationCompteComponent implements OnInit {
   registerForm: FormGroup;
     submitted = false;
 
-    constructor(private formBuilder: FormBuilder , private utilisateurService: UtilisateurService) { 
+    constructor(private formBuilder: FormBuilder , ) { //private utilisateurService: UtilisateurService
         
     }
 

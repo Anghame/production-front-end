@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../_services/user.service';
+/*import { UserService } from '../_services/user.service';*/
 
 @Component({
   selector: 'app-home',
@@ -9,9 +9,10 @@ import { UserService } from '../_services/user.service';
 export class HomeComponent implements OnInit {
   content = '';
 
-  constructor(private userService: UserService) { }
+  constructor() { } //private userService: UserService
 
   ngOnInit() {
+    /*
     this.userService.getAdminBoard().subscribe(
       data => {
         this.content = data;
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
       err => {
         this.content = JSON.parse(err.error).message;
       }
-    );
+    ); */
   }
 
 }
