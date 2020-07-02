@@ -24,7 +24,7 @@ export class CreationCompteComponent implements OnInit {
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
-            
+          cin: ['', Validators.required],
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             dateNaiss: ['', [Validators.required, CustomValidators.date]],
