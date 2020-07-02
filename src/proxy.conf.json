@@ -1,0 +1,9 @@
+{
+    "/suiviProd/client/": {
+      "target": "https://suivi-prod.herokuapp.com",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+  }
+

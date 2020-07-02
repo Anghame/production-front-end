@@ -21,4 +21,7 @@ export class GestionClientComponent implements OnInit {
   delete(idOf:number){
     this.clientService.delete(idOf).subscribe(data=>{console.log(data);this.reloadData();},error=>console.log(error));}
 }
+//
+
+
 

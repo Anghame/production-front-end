@@ -41,7 +41,7 @@ import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 
 const routes: Routes = [
@@ -106,6 +106,7 @@ const routes: Routes = [
     ConsulterSeuilComponent,
     DefinirSeuilComponent,
     GestionClientComponent,
+    ForgetPasswordComponent,
 
   
    
