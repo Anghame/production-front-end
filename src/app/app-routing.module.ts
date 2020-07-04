@@ -24,6 +24,10 @@ import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
 import { InfosPersoComponent } from './infos-perso/infos-perso.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { UpdateProduitComponent } from './update-produit/update-produit.component';
+import { UpdateOFComponent } from './update-of/update-of.component';
+//import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 const routes: Routes = [{
@@ -121,6 +125,18 @@ component:ForgetPasswordComponent
   
 },
 
+{ path:'updateUser',
+component:UpdateUserComponent
+  
+},
+{ path:'updateProduit',
+component:UpdateProduitComponent
+  
+},
+{ path:'updateOF',
+component:UpdateOFComponent
+  
+},
 
 
 

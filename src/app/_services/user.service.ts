@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 //a modifier avec le path precie en back
-const API_URL = 'http://localhost:8080/api/test/'; 
+const API_URL = 'https://back-end-sp.herokuapp.com/api/auth/'; 
 
 @Injectable({
   providedIn: 'root'

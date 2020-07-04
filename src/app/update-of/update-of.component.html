@@ -1,0 +1,156 @@
+
+<body>
+
+
+    <div [style.background]="'url(./assets/img/background.jpg)'">
+        <a  [routerLink]="['/home']">
+            <div class="logo-container">
+               
+                <div class="brand">
+                  Page d'accueil
+                </div>
+            </div>
+        </a>
+  
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="description">
+                        <h3 [ngStyle]="{color:'white' }">Modification coordonnées  utilisateur</h3>
+                       
+                    </div>
+  
+                    <div class="fresh-table full-color-azure">
+          
+                        <div class="fixed-table-toolbar">
+                            
+                        
+                            <table id="fresh-table" class="table">
+                                <thead>
+                                    <th data-field="id"><h6 [ngStyle]="{color:'white' }"> ID-OF </h6></th>
+                                    <th data-field="name" data-sortable="true"> <h6 [ngStyle]="{color:'white' }"> ID-client  </h6></th>
+                                    <th data-field="salary" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">Produit</h6></th>
+                                    <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">Réferece de la commande </h6></th>
+                                    <th data-field="city"> <h6 [ngStyle]="{color:'white' }">Quantité </h6></th>
+                                    <th data-field="actions" > <h6 [ngStyle]="{color:'white' }"> Date d'entrée </h6></th>
+                                    <th data-field="actions" > <h6 [ngStyle]="{color:'white' }"> Date de sortie  </h6></th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let ordreFabs of ordreFab | async">
+                                        <td> {{ordreFabs.idOf}}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{ordreFabs.quantite}}</td>
+                                        <td>{{ordreFabs.dateEntree}}</td>
+                                       <td>{{ordreFabs.dateSortie}}</td>
+   <td>
+       <div class="fixed-table-toolbar">
+           <div class="bs-bars pull-left">
+               <div class="toolbar">
+               
+                   <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
+                   <button  class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+               </div>
+           </div>
+          
+   
+       </div>
+   </td>
+                                    
+                                </tbody>
+    
+                            </table>
+                            <br> 
+                                    <div  class="row justify-content-center ">
+    
+                                        <div class="col-xl-9 col-lg-12 col-md-9">
+                                  
+                                          <div class="jumbotron jumbotron-fluid shadow-lg rounded" style="margin: 40px; background-color:rgba(127, 214, 214, 0.527); box-shadow: blue; width: 800px;">
+                                            <div class="card-body p-0">
+                                              <!-- Nested Row within Card Body -->
+                                              <div class="row">
+                                                <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
+                                                <!--<img class="col-lg-6  d-lg-block " src="assets/img/2.PNG" alt="" />-->
+                                                <div class="col-lg-10  offset-lg-1">
+                                                  <div  class="p-5">
+                                                    <div class="text-center">
+                                                      <h1 class="h4 text-gray-900 mb-4"></h1>
+                                                    </div>
+                                                    <form class="user" [formGroup]="ajoutOfForm" >
+                                                        <div class="form-group">
+                                                             <label>  <i> l'identifiant  d'un OF:</i></label>
+                                                             <input type="text"class="form-control form-control-user" id="idOF"  placeholder="l'identifiant"
+                                                             formControlName="idOF"
+                                                           class="form-control"
+                                
+                                                         [ngClass]="{ 'is-invalid': submitted && f.idOF.errors }">
+                                                         
+                                                         <div *ngIf="submitted && f.idOF.errors" class="invalid-feedback">
+                                                          <div *ngIf="f.idOF.errors.required">identifiant OF est requis</div>
+                                                          <div *ngIf="f.idOF.errors.minlength">
+                                                            l'identifiant doit comporter au moins 6 caractères</div>
+                                                      </div>
+                                                        </div>
+                                                       
+                                                          
+                                                          
+                                                          <div class="form-group">
+                                                            <label>  <i> La quantité :</i> </label>
+                                                             <input type="text" class="form-control form-control-user" id="quantite"  placeholder="quantité"
+                                                             formControlName="quantite"
+                                                             class="form-control"
+                                  
+                                                           [ngClass]="{ 'is-invalid': submitted && f.quantite.errors }">
+                                                           
+                                                           <div *ngIf="submitted && f.quantite.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.quantite.errors.required"> La quantité est requis</div>
+                                                            <div *ngIf="f.quantite.errors.maxlength">la quantité doit etre numerique et comporter au plus 4 chiffres </div>
+                                                        </div>
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <label>  <i> la date d'entrée:</i> </label> 
+                                                            <input type="text" class="form-control form-control-user" id="dateEntre"  placeholder="date d'entrée"
+                                                            formControlName="dateEntre"
+                                                            class="form-control"
+                                 
+                                                          [ngClass]="{ 'is-invalid': submitted && f.dateEntre.errors }">
+                                                          
+                                                          <div *ngIf="submitted && f.dateEntre.errors" class="invalid-feedback">
+                                                           <div *ngIf="f.dateEntre.errors.required"> la date d'entrée est requis</div>
+                                                           
+                                                       </div>
+                                                          </div>
+                                                        
+                                                        <div class="form-group">
+                                                            <label>  <i> la date de sortie :</i> </label>
+                                                             <input type="text"  class="form-control form-control-user" id="dateSortie" placeholder="date de sortie"
+                                                             formControlName="dateSortie"
+                                                             class="form-control"
+                                  
+                                                           [ngClass]="{ 'is-invalid': submitted && f.dateSortie.errors }">
+                                                           
+                                                           <div *ngIf="submitted && f.dateSortie.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.dateSortie.errors.required"> la date de sortie  est requis</div>
+                                                        
+                                                        </div>
+                                                        </div>
+                                                       
+                                                        
+                
+                                                        <button class="btn btn-primary btn-user btn-block"> Modifier</button>
+                                                        <button class="btn btn-primary btn-user btn-block" type="reset">Annuler</button>
+                                              
+                                                          </form>
+                                                    
+                                                  
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                  
+                                        </div>
+                                  
+                                      </div>
+  

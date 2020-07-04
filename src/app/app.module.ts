@@ -42,6 +42,10 @@ import { GestionClientComponent } from './gestion-client/gestion-client.componen
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HttpClientModule } from '@angular/common/http';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { UpdateProduitComponent } from './update-produit/update-produit.component';
+import { UpdateOFComponent } from './update-of/update-of.component';
+//import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 const routes: Routes = [
@@ -107,6 +111,10 @@ const routes: Routes = [
     DefinirSeuilComponent,
     GestionClientComponent,
     ForgetPasswordComponent,
+    UpdateUserComponent,
+    UpdateProduitComponent,
+    UpdateOFComponent,
+    //UpdateUserComponent,
 
   
    
