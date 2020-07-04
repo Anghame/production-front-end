@@ -1,6 +1,6 @@
 
 
-  import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators'
@@ -9,7 +9,7 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ClientService {
-  private baseUrl = 'https://back-end-sp.herokuapp.com/api/client/';
+  private baseUrl = 'https://back-end-sp.herokuapp.com/suiviProd/client/';
 
   constructor(private http: HttpClient) { }
 /* get
