@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CustomValidators } from 'ng4-validators';
+import {Produit} from 'src/app/Class/produit';
+import  {ProduitService}  from 'src/app/produit.service';
 
 @Component({
   selector: 'app-ajout-produit',
@@ -8,10 +9,10 @@ import { CustomValidators } from 'ng4-validators';
   styleUrls: ['./ajout-produit.component.css']
 })
 export class AjoutProduitComponent implements OnInit {
-
+  produit:  Produit = new  Produit();
   ajoutProduitForm: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private  produitService :ProduitService) { }
 
   ngOnInit() {
       this.ajoutProduitForm = this.formBuilder.group({
@@ -27,7 +28,8 @@ export class AjoutProduitComponent implements OnInit {
   get f() { return this.ajoutProduitForm.controls; }
 
   onSubmit() {
-      this.submitted = true;
+    this.submitted = true;
+    this.save();
 
       // stop here if form is invalid
       if (this.ajoutProduitForm.invalid) {
@@ -42,4 +44,14 @@ export class AjoutProduitComponent implements OnInit {
       this.submitted = false;
       this.ajoutProduitForm.reset();
   }
+   add(): void {
+      this.submitted = false;
+      this.produit = new Produit();
+    }
+  
+    save() {
+      this.produitService.add(this.produit)
+        .subscribe(data => console.log(data), error => console.log(error));
+      this.produit= new Produit();
+    }
 }

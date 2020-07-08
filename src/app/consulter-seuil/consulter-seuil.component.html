@@ -11,7 +11,7 @@
         </div>
     </a>
     <br> 
-<br> 
+<br>
  
     <form class="user">
         <h7 [ngStyle]="{color:'white' }"> <b>Consulter le seuil actuel  </b></h7>
@@ -25,15 +25,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-                <br>
-            </td>
+          <tr *ngFor="let seuils of seuil | async">
+            <td>{{seuils.chiffreProduction}}</td>
            
           </tr>
                </tbody>
       </table>
-    <br>
+      <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
     
     <hr color="white">
 

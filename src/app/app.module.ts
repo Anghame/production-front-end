@@ -40,11 +40,12 @@ import { ConsulterSeuilComponent } from './consulter-seuil/consulter-seuil.compo
 import { DefinirSeuilComponent } from './definir-seuil/definir-seuil.component';
 import { GestionClientComponent } from './gestion-client/gestion-client.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateProduitComponent } from './update-produit/update-produit.component';
 import { UpdateOFComponent } from './update-of/update-of.component';
+import { TokenInterceptorService } from './token-interceptor.service';
 //import { UpdateUserComponent } from './update-user/update-user.component';
 
 
@@ -140,7 +141,12 @@ const routes: Routes = [
 
   
 
-  providers: [authInterceptorProviders,HttpClientModule],
+  providers: [authInterceptorProviders,HttpClientModule,
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  }],
 
   bootstrap: [AppComponent]
 })

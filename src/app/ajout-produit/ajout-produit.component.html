@@ -70,14 +70,14 @@
                           </div>
 
                           
-                            <a class="nav-link" href="tables.html">
+                            <a   [ngStyle]="{color:'black' }" class="nav-link" href="tables.html">
                               
-                              <span> définir une image principale de produit </span></a>
+                              <span><u> définir une image principale de produit</u> </span></a>
                           
                           
-                            <a class="nav-link" href="tables.html">
+                            <a [ngStyle]="{color:'black' }" class="nav-link" href="tables.html">
                         
-                              <span> remplir le dossier technique de produit  </span></a>
+                              <span ><u> remplir le dossier technique de produit </u> </span></a>
                         
                       
             
@@ -87,7 +87,7 @@
                         
                        
                         
-                        <button class="btn btn-primary btn-user btn-block" type="submit"> Ajouter</button>
+                        <button class="btn btn-primary btn-user btn-block" type="submit" (click)="add()"> Ajouter</button>
                     <button class="btn btn-primary btn-user btn-block" type="reset" (click)="onReset()">Annuler</button>
                   
                         

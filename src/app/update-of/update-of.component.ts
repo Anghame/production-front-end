@@ -4,6 +4,7 @@ import { CustomValidators } from 'ng4-validators';
 import { OrdreFabricationService } from 'src/app/ordre-fabrication.service';
 import {OrdreFab} from 'src/app/Class/ordre-fab'; 
 import {Observable} from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-of',
@@ -11,11 +12,12 @@ import {Observable} from 'rxjs';
   styleUrls: ['./update-of.component.css']
 })
 export class UpdateOFComponent implements OnInit {
-
+idOf:number;
   ajoutOfForm: FormGroup;
+  ordreFab:OrdreFab;
   submitted = false;
-  ordreFab:Observable<OrdreFab[]>;
-  constructor(private formBuilder: FormBuilder ,private ordreFabService:OrdreFabricationService) { }
+  ordreFab1:Observable<OrdreFab[]>;
+  constructor(private formBuilder: FormBuilder ,private ordreFabService:OrdreFabricationService, private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
       this.ajoutOfForm = this.formBuilder.group({
@@ -31,6 +33,17 @@ export class UpdateOFComponent implements OnInit {
       }, );
   }
   get f() { return this.ajoutOfForm.controls; }
-
+  update() {
+    this.ordreFabService.update(this.idOf, this.ordreFab)
+      .subscribe(data => console.log(data), error => console.log(error));
+    this.ordreFab = new OrdreFab();
+    this.gotoList();
+  }
+  onSubmit() {
+    this.update();    
+  }
+  gotoList() {
+    this.router.navigate(['/gestionproduit']);
+  }
 
 }

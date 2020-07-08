@@ -7,7 +7,7 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class ProduitService {
-  private baseUrl = 'https://back-end-sp.herokuapp.com/api/produit/';
+  private baseUrl = 'https://back-end-sp.herokuapp.com/suiviProd/produit';
 
 
   constructor(private http: HttpClient) { }
@@ -17,20 +17,20 @@ export class ProduitService {
   }*/
 
   add(produit: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, produit).pipe(map(res=>{return res;}));
+    return this.http.post(`${this.baseUrl}/add`, produit).pipe(map(res=>{return res;}));
 
   }
 
   update(idProduit: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${idProduit}`, value).pipe(map(res=>{return res;}));
+    return this.http.put(`${this.baseUrl}/update${idProduit}`, value).pipe(map(res=>{return res;}));
   }
 
   delete(idProduit: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${idProduit}`, { responseType: 'text' }).pipe(map(res=>{return res;}));
+    return this.http.delete(`${this.baseUrl}/delete${idProduit}`, { responseType: 'text' }).pipe(map(res=>{return res;}));
   }
 
   getAll(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`).pipe(map(res=>{return res;}));
+    return this.http.get(`${this.baseUrl}/getAll`).pipe(map(res=>{return res;}));
   }
 }
 

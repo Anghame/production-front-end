@@ -13,7 +13,7 @@
     <br> 
 <br> 
  
-    <form class="user">
+    <form class="user" type="submit">
         <h7 [ngStyle]="{color:'white' }"> <b>Définir un nouveau seuil</b></h7>
 
     <br>
@@ -21,7 +21,7 @@
     <textarea class=" form-control-user" id="difseuil">
     </textarea>
     <br>
-    <button class="btn btn-primary btn-user "> Définir</button>
+    <button class="btn btn-primary btn-user " type="submit"(click)="add()"> Définir</button>
     <hr color="white">
 
 </form>
