@@ -26,8 +26,9 @@ export class ProduitService {
   }
 
   delete(idProduit: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete${idProduit}`, { responseType: 'text' }).pipe(map(res=>{return res;}));
+    return this.http.delete(`${this.baseUrl}/delete/${idProduit}`, { responseType: 'text' }).pipe(map(res=>{return res;}));
   }
+
 
   getAll(): Observable<any> {
     return this.http.get(`${this.baseUrl}/getAll`).pipe(map(res=>{return res;}));

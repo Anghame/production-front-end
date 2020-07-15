@@ -27,6 +27,10 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateProduitComponent } from './update-produit/update-produit.component';
 import { UpdateOFComponent } from './update-of/update-of.component';
+import { UpdateClientComponent } from './update-client/update-client.component';
+import { AjoutEtapeComponent } from './ajout-etape/ajout-etape.component';
+import { GestionEtapeComponent } from './gestion-etape/gestion-etape.component';
+import { LesProduitsComponent } from './les-produits/les-produits.component';
 //import { UpdateUserComponent } from './update-user/update-user.component';
 
 
@@ -70,6 +74,10 @@ component:GestionOfComponent
 },
 { path:'ordresFab',
 component:GestionOrdreFabComponent
+  
+},
+{ path:'produits',
+component:LesProduitsComponent
   
 },
 { path:'creationCompte',
@@ -129,14 +137,28 @@ component:ForgetPasswordComponent
 component:UpdateUserComponent
   
 },
-{ path:'updateProduit',
+{ path:'updateProduit/:idProduit',
 component:UpdateProduitComponent
   
 },
-{ path:'updateOF',
+{ path:'updateOF/:idOf',
 component:UpdateOFComponent
   
 },
+
+{ path:'updateClient/:idClient',
+component:UpdateClientComponent
+  
+},
+{ path:'ajoutEtape',
+component:AjoutEtapeComponent
+  
+},
+{ path:'gestionEtape',
+component:GestionEtapeComponent
+  
+},
+
 
 
 

@@ -45,7 +45,11 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateProduitComponent } from './update-produit/update-produit.component';
 import { UpdateOFComponent } from './update-of/update-of.component';
-import { TokenInterceptorService } from './token-interceptor.service';
+import { UpdateClientComponent } from './update-client/update-client.component';
+import { AjoutEtapeComponent } from './ajout-etape/ajout-etape.component';
+import { GestionEtapeComponent } from './gestion-etape/gestion-etape.component';
+import { LesProduitsComponent } from './les-produits/les-produits.component';
+
 //import { UpdateUserComponent } from './update-user/update-user.component';
 
 
@@ -115,6 +119,10 @@ const routes: Routes = [
     UpdateUserComponent,
     UpdateProduitComponent,
     UpdateOFComponent,
+    UpdateClientComponent,
+    AjoutEtapeComponent,
+    GestionEtapeComponent,
+    LesProduitsComponent,
     //UpdateUserComponent,
 
   
@@ -136,17 +144,7 @@ const routes: Routes = [
   ],
  
   
-
-  
-
-  
-
-  providers: [authInterceptorProviders,HttpClientModule,
-  {
-    provide:HTTP_INTERCEPTORS,
-    useClass:TokenInterceptorService,
-    multi:true
-  }],
+  providers: [authInterceptorProviders],
 
   bootstrap: [AppComponent]
 })

@@ -20,6 +20,8 @@ export class AjoutProduitComponent implements OnInit {
         idProduit: ['', [Validators.required,Validators.minLength(6)]],
         nom: ['', [Validators.required,Validators.maxLength(20)]],
         designation: ['', [Validators.required,Validators.minLength(50)]],
+        urlImagePrincipale: ['', [Validators.required,Validators.minLength(50)]],
+        urlDossierTec: ['', [Validators.required,Validators.minLength(50)]],
   
     
         
@@ -44,12 +46,25 @@ export class AjoutProduitComponent implements OnInit {
       this.submitted = false;
       this.ajoutProduitForm.reset();
   }
+  /* kk
+  export class Produit {
+    idProduit:number;
+    nomProduit:String;
+    designation:String;
+    urlImagePrincipale:String;
+    urlDossierTec:String;
+}
+ */
    add(): void {
       this.submitted = false;
       this.produit = new Produit();
+      this.produit.nomProduit =this.ajoutProduitForm.controls['nom'].value;
+      this.produit.designation =this.ajoutProduitForm.controls['designation'].value;
+      this.produit.urlImagePrincipale=this.ajoutProduitForm.controls['urlImagePrincipale'].value;
+      this.produit.urlDossierTec=this.ajoutProduitForm.controls['urlDossierTec'].value;
     }
   
-    save() {
+    save():void {
       this.produitService.add(this.produit)
         .subscribe(data => console.log(data), error => console.log(error));
       this.produit= new Produit();

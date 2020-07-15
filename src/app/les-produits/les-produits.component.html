@@ -46,7 +46,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Les ordres de fabrication</h1>
+          <h1 class="h3 mb-2 text-gray-800">Les Produits </h1>
         
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -57,35 +57,31 @@
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
-                    <tr>
-                      <th>ID-OF</th>
-                      <th>ID-client</th>
-                      <th>iD-Produit</th>
-                      <th>Quantité</th>
-                      <th>Date d'entrée</th>
-                      <th>Date de sortie </th>
+                    <tr >
+                      <th>ID-Produit</th>
+                      <th>Nom-Produit</th>
+                      <th>Désignation</th>
+                      <th>url image Principale</th>
+                      <th>url dossier technique</th>
                     </tr>
                   </thead>
                   <tfoot>
-                    <tr>
-                      <th>ID-OF</th>
-                      <th>ID-client</th>
+                    <tr >
                       <th>ID-Produit</th>
-                      <th>Quantité</th>
-                      <th>Date d'entrée</th>
-                      <th>Date de sortie </th>
+                      <th>Nom-Produit</th>
+                      <th>Désignation</th>
+                      <th>url image Principale</th>
+                      <th>url dossier technique</th>
+                    
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr *ngFor="let ordreFabs of ordreFab | async" >
-                     
-                      <td > {{ordreFabs.idOf}}</td>
-                       <td >{{ordreFabs.idClient}}</td>
-                      <td >{{ordreFabs.idProduit}}</td>
-            
-                    <td >{{ordreFabs.quantite}}</td>
-                    <td >{{ordreFabs.dateEntree}}</td>
-                   <td >{{ordreFabs.dateSortie}}</td>
+                    <tr *ngFor="let produits of produit | async" >
+                        <td >{{produits.idProduit}}</td>
+                        <td>{{produits.nomProduit}}</td>
+                        <td >{{produits.designation}}</td>
+                        <td type="url" > <a   [routerLink]="['/home']">  {{produits.urlImagePrincipale}} </a></td>
+                        <td > <a  [routerLink]="['/home']"> {{produits.urlDossierTec}} </a></td>
                     </tr>
                    
                   </tbody>

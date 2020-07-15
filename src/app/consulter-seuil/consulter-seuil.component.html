@@ -25,8 +25,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let seuils of seuil | async">
-            <td>{{seuils.chiffreProduction}}</td>
+          <tr *ngFor="let seuils of seuil | async,brrak">
+            <td [ngStyle]="{color:'white' }">{{seuils.chiffreProduction}}</td>
            
           </tr>
                </tbody>

@@ -2,6 +2,7 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Client} from 'src/app/Class/client';
 import  {ClientService}  from 'src/app/client.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout-client',
@@ -12,7 +13,7 @@ export class AjoutClientComponent implements OnInit {
   client:  Client = new  Client();
   ajoutClientForm: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder , private  clientService :ClientService ) { }
+  constructor(private formBuilder: FormBuilder , private  clientService :ClientService , private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
       this.ajoutClientForm = this.formBuilder.group({
@@ -30,6 +31,8 @@ export class AjoutClientComponent implements OnInit {
     return this.ajoutClientForm.controls; }
 
   onSubmit() {
+
+    console.log("Appelle de la fonction onSubmit");
       this.submitted = true;
       this.save();
 
@@ -55,14 +58,29 @@ export class AjoutClientComponent implements OnInit {
 
   
     add(): void {
+
+console.log("Appelle de la fonction add");
+
       this.submitted = false;
       this.client = new Client();
-    }
+      this.client.nom =this.ajoutClientForm.controls['nomClient'].value;
+      this.client.prenom =this.ajoutClientForm.controls['pClient'].value;
+      this.client.email =this.ajoutClientForm.controls['emailClient'].value;
   
-    save() {
-      this.clientService.add(this.client)
-        .subscribe(data => console.log(data), error => console.log(error));
-      this.client= new Client();
-    }
-  
+
+}
+
+
+save() : void {
+  this.clientService.add(this.client)
+    .subscribe(data => console.log(data), error => console.log(error));
+  this.client= new Client();
+
+}
+
+goToListe()
+{
+this.router.navigate(['/gestionClient']);
+
+}
 }

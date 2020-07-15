@@ -1,0 +1,112 @@
+<body>
+
+
+    <div [style.background]="'url(./assets/img/background.jpg)'">
+        <a  [routerLink]="['/home']">
+            <div class="logo-container">
+               
+                <div class="brand">
+                  Page d'accueil
+                </div>
+            </div>
+        </a>
+  
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="description">
+                        <h3 [ngStyle]="{color:'white' }">Modification coordonnées  Client</h3>
+                       
+                    </div>
+  
+                    <div class="fresh-table full-color-azure">
+          
+                        <div class="fixed-table-toolbar">
+                            
+                        
+                           
+                            <br> 
+                                    <div  class="row justify-content-center ">
+    
+                                        <div class="col-xl-9 col-lg-12 col-md-9">
+                                  
+                                          <div class="jumbotron jumbotron-fluid shadow-lg rounded" style="margin: 40px; background-color:rgba(127, 214, 214, 0.527); box-shadow: blue; width: 800px;">
+                                            <div class="card-body p-0">
+                                              <!-- Nested Row within Card Body -->
+                                              <div class="row">
+                                                <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
+                                                <!--<img class="col-lg-6  d-lg-block " src="assets/img/2.PNG" alt="" />-->
+                                                <div class="col-lg-10  offset-lg-1">
+                                                  <div  class="p-5">
+                                                    <div class="text-center">
+                                                      <h1 class="h4 text-gray-900 mb-4"></h1>
+                                                    </div>
+<form class="user"   [formGroup]="ajoutClientForm" (ngSubmit)="onSubmit()">
+                        
+    <div class="form-group">
+        <label> <i> le nom de client  :</i> </label>
+         <input type="text" class="form-control form-control-user" id="nomClient"  placeholder="nom"
+         required [(ngModel)]="client.nom"
+         formControlName="nomClient"
+         class="form-control"
+
+       [ngClass]="{ 'is-invalid': submitted && f.nomClient.errors }">
+       
+       <div *ngIf="submitted && f.nomClient.errors" class="invalid-feedback">
+        <div *ngIf="f.nomClient.errors.required">le nom de client  est requis</div>
+        <div *ngIf="f.nomClient.errors.minlength">l'identifiant de client doit comporter au moins 4 caractères</div>
+    </div>
+      </div>
+      <div class="form-group">
+        <label> <i> Le prénom de client </i></label>
+         <input type="text" class="form-control form-control-user" id="pClient" placeholder="prenom"
+         required [(ngModel)]="client.prenom"
+         formControlName="pClient"
+         class="form-control"
+
+       [ngClass]="{ 'is-invalid': submitted && f.pClient.errors }"
+       >
+       
+       <div *ngIf="submitted && f.pClient.errors" class="invalid-feedback">
+        <div *ngIf="f.pClient.errors.required">prénom de client est requis</div>
+        <div *ngIf="f.pClient.errors.minlength">le prénom de client  doit comporter au moins 4 caractères</div>
+    </div>
+      </div>
+      <div class="form-group">
+        <label>  <i> Email de client </i> </label>
+         <input type="text" class="form-control form-control-user" id="emailClient"  placeholder="Email
+        "
+        required [(ngModel)]="client.email"
+        formControlName="emailClient"
+        class="form-control"
+
+      [ngClass]="{ 'is-invalid': submitted && f.emailClient.errors }">
+      
+      <div *ngIf="submitted && f.emailClient.errors" class="invalid-feedback">
+       <div *ngIf="f.emailClient.errors.required">l'Email est requis</div>
+       <div *ngIf="f.emailClient.errors.email">Email must be a valid email address</div>
+      </div>
+      </div>
+
+    
+    
+
+   
+    
+    <button class="btn btn-primary btn-user btn-block"  type="submit" (click)="update()"> Modifier</button>
+<button class="btn btn-primary btn-user btn-block" type="reset" (click)="onReset()">Annuler</button>
+
+    
+
+   
+  </form>
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>

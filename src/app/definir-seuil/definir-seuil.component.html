@@ -1,45 +1,69 @@
-<div [style.background]="'url(./assets/img/background1.jpg)'">
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('./assets/img/background1.jpg');">
+<!--<div [style.background]="'url(./assets/img/background1.jpg)'">-->
 
-
+    <!-- Ajouter par samer -->
+    <!-- Ajouter par lamia -->
     <div class="container">
       <a  [routerLink]="['/home']">
         <div class="logo-container">
-           
+                
             <div class="brand">
               Page d'accueil
             </div>
         </div>
     </a>
-    <br> 
-<br> 
- 
-    <form class="user" type="submit">
-        <h7 [ngStyle]="{color:'white' }"> <b>Définir un nouveau seuil</b></h7>
+    
+        <!-- Outer Row -->
+        <div  class="row justify-content-center ">
+    
+          <div class="col-xl-9 col-lg-12 col-md-9">
+    
+            <div class="jumbotron jumbotron-fluid shadow-lg rounded" style="margin: 40px; background-color:rgba(127, 214, 214, 0.527); box-shadow: blue;">
+              <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                  <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
+                  <!--<img class="col-lg-6  d-lg-block " src="assets/img/2.PNG" alt="" />-->
+                  <div class="col-lg-10  offset-lg-1">
+                    <div  class="p-5">
+                      <div class="text-center">
+                        <h1 class="h4 text-gray-900 mb-4"  [ngStyle]="{color:'white' }"> Définir un nouveau seuil </h1>
+                      </div>
+    <form class="user"  [formGroup]="ajoutSeuilForm" (ngSubmit)="onSubmit()">
+        
+    <div class="form-group">
+        <label> <i> Seuil :</i> </label>
+         <input height="20px" type="text" class="form-control form-control-user" id="chiffreProduction"  placeholder="seuil de production "
+         formControlName="chiffreProduction"
+         class="form-control"
 
-    <br>
-    <br>
-    <textarea class=" form-control-user" id="difseuil">
-    </textarea>
-    <br>
+       [ngClass]="{ 'is-invalid': submitted && f.chiffreProduction.errors }">
+       
+       <div *ngIf="submitted && f.chiffreProduction.errors" class="invalid-feedback">
+        <div *ngIf="f.chiffreProduction.errors.required">le seuil de production   est requis</div>
+        <div *ngIf="f.chiffreProduction.errors.minlength">le seuil doit comporter au moins 2 caractères</div>
+    </div>
+      </div>
     <button class="btn btn-primary btn-user " type="submit"(click)="add()"> Définir</button>
-    <hr color="white">
+
 
 </form>
-<br> 
-<br>
-<br> 
-<br><br> 
-<br><br> 
-<br><br> 
-<br><br> 
-<br><br> 
-<br><br> 
-<br><br> 
-<br><br> 
-<br><br> 
-<br><br> 
+ 
 
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    </div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+   </div> 
     
-    </div>

@@ -4,11 +4,11 @@ import {Observable} from 'rxjs';
 import {ProduitService} from 'src/app/produit.service';
 
 @Component({
-  selector: 'app-gestion-produit',
-  templateUrl: './gestion-produit.component.html',
-  styleUrls: ['./gestion-produit.component.css']
+  selector: 'app-les-produits',
+  templateUrl: './les-produits.component.html',
+  styleUrls: ['./les-produits.component.css']
 })
-export class GestionProduitComponent implements OnInit {
+export class LesProduitsComponent implements OnInit {
   produit:Observable<Produit[]>;
 
   constructor( private produitService: ProduitService) { }

@@ -1,6 +1,7 @@
 <body>
-
-    <div [style.background]="'url(./assets/img/background.jpg)'">
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('./assets/img/azerty.jpg');">
+    <!--<div [style.background]="'url(./assets/img/background.jpg)'">-->
          <!--   Creative Tim Branding   -->
          <a  [routerLink]="['/home']">
              <div class="logo-container">
@@ -29,7 +30,7 @@
                             
                              <div class="pull-right search input-group">
                                  <input class="form-control&#10;        &#10;        search-input" type="text"
-                                     placeholder="Search" autocomplete="off">
+                                     placeholder="Rechercher" autocomplete="off">
                              </div>
                          </div>
  
@@ -44,10 +45,10 @@
                              </thead>
                              <tbody>
                                  <tr *ngFor="let clients of client | async">
-                                     <td>{{clients.idClient}}</td>
-                                     <td>{{clients.nom}}</td>
-                                     <td>{{clients.prenom}}</td>
-                                     <td>{{clients.email}}</td>
+                                     <td [ngStyle]="{color:'white' }">{{clients.idClient}}</td>
+                                     <td [ngStyle]="{color:'white' }">{{clients.nom}}</td>
+                                     <td [ngStyle]="{color:'white' }">{{clients.prenom}}</td>
+                                     <td [ngStyle]="{color:'white' }">{{clients.email}}</td>
                                 
                                     <td>   
                                     </td>
@@ -56,7 +57,7 @@
         <div class="bs-bars pull-left">
             <div class="toolbar">
             
-                <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
+                <button (click)="update(clients.idClient)"class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
                 <button (click)="delete(clients.idClient)" class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
             </div>
         </div>
@@ -90,6 +91,7 @@
              </div>
          </div>
          
+     </div>
      </div>
  </body>
  

@@ -1,7 +1,7 @@
 <body>
     <div class="limiter">
-        <div class="container-login100" style="background-image: url('./assets/img/azerty.jpg');">
-   <!-- <div [style.background]="'url(./assets/img/background.jpg)'">-->
+        <div class="container-login100" style="background-image: url('./assets/img/azert.jpg');">
+    <!--<div [style.background]="'url(./assets/img/background.jpg)'">-->
          <!--   Creative Tim Branding   -->
          <a  [routerLink]="['/home']">
              <div class="logo-container">
@@ -16,7 +16,7 @@
              <div class="row">
                  <div class="col-md-8 col-md-offset-2">
                      <div class="description">
-                         <h3 [ngStyle]="{color:'white' }">Gestion des Ordres des fabrication </h3>
+                         <h3 [ngStyle]="{color:'white' }">Gestion des étapes </h3>
                         
                      </div>
  
@@ -30,36 +30,34 @@
                             
                              <div class="pull-right search input-group">
                                  <input class="form-control&#10;        &#10;        search-input" type="text"
-                                     placeholder="Search" autocomplete="off">
+                                     placeholder="Rechercher" autocomplete="off">
                              </div>
                          </div>
  
                          <table id="fresh-table" class="table">
                              <thead>
-                                 <th data-field="id"><h6 [ngStyle]="{color:'white' }"> ID-OF </h6></th>
-                                 <th data-field="name" data-sortable="true"> <h6 [ngStyle]="{color:'white' }"> ID-client  </h6></th>
-                                 <th data-field="salary" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">Produit</h6></th>
                                  
-                                 <th data-field="city"> <h6 [ngStyle]="{color:'white' }">Quantité </h6></th>
-                                 <th data-field="actions" > <h6 [ngStyle]="{color:'white' }"> Date d'entrée </h6></th>
-                                 <th data-field="actions" > <h6 [ngStyle]="{color:'white' }"> Date de sortie  </h6></th>
+                                 <th data-field="name" data-sortable="true"> <h6 [ngStyle]="{color:'white' }"> ID-Etape  </h6></th>
+                                 <th data-field="salary" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">Nom-Etape</h6></th>
+                                 <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">Numero-Etape</h6></th>
+                                 
                              </thead>
                              <tbody>
-                                 <tr *ngFor="let ordreFabs of ordreFab | async">
-                                     <td [ngStyle]="{color:'white' }"> {{ordreFabs.idOf}}</td>
-                                     <td [ngStyle]="{color:'white' }">{{ordreFabs.idClient}}</td>
-                                     <td [ngStyle]="{color:'white' }">{{ordreFabs.idProduit}}</td>
-            
-                                     <td [ngStyle]="{color:'white' }">{{ordreFabs.quantite}}</td>
-                                     <td [ngStyle]="{color:'white' }">{{ordreFabs.dateEntree}}</td>
-                                    <td [ngStyle]="{color:'white' }">{{ordreFabs.dateSortie}}</td>
+                                 <tr *ngFor="let etapes of etape | async">
+                                     <td [ngStyle]="{color:'white' }">{{etapes.idEtape}}</td>
+                                     <td [ngStyle]="{color:'white' }">{{etapes.nomEtape}}</td>
+                                     <td [ngStyle]="{color:'white' }">{{etapes.numEtape}}</td>
+                    
+                                
+                                    <td>   
+                                    </td>
 <td>
     <div class="fixed-table-toolbar">
         <div class="bs-bars pull-left">
             <div class="toolbar">
             
-                <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
-                <button (click)="delete(ordreFabs.idOf)" class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+                <button (click)="update(etapes.idEtape)"class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
+                <button (click)="delete(etapes.idEtape)" class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
             </div>
         </div>
        
@@ -67,7 +65,7 @@
     </div>
 </td>
                                  </tr>
-                                 
+                               
                              </tbody>
  
                          </table>
@@ -91,7 +89,9 @@
                  </div>
              </div>
          </div>
-         </div>
+         
+     </div>
      </div>
  </body>
  
+

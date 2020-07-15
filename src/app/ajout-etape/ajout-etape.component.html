@@ -1,0 +1,92 @@
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('./assets/img/background1.jpg');">
+  <!--<div [style.background]="'url(./assets/img/background1.jpg)'"> -->
+  
+      <!-- Ajouter par samer -->
+      <!-- Ajouter par lamia -->
+      <div class="container">
+        <a  [routerLink]="['/home']">
+          <div class="logo-container">
+                 
+              <div class="brand">
+                Page d'accueil
+              </div>
+          </div>
+      </a>
+      
+          <!-- Outer Row -->
+          <div  class="row justify-content-center ">
+      
+            <div class="col-xl-9 col-lg-12 col-md-9">
+      
+              <div class="jumbotron jumbotron-fluid shadow-lg rounded" style="margin: 40px; background-color:rgba(127, 214, 214, 0.527); box-shadow: blue;">
+                <div class="card-body p-0">
+                  <!-- Nested Row within Card Body -->
+                  <div class="row">
+                    <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>-->
+                    <!--<img class="col-lg-6  d-lg-block " src="assets/img/2.PNG" alt="" />-->
+                    <div class="col-lg-10  offset-lg-1">
+                      <div  class="p-5">
+                        <div class="text-center">
+                          <h1 class="h4 text-gray-900 mb-4"  [ngStyle]="{color:'blue' }"> Ajout Etape </h1>
+                        </div>
+                        <form class="user"   [formGroup]="ajoutEtapeForm" (ngSubmit)="onSubmit()">
+                          
+                          <div class="form-group">
+                              <label> <i> le nom de l'étape  :</i> </label>
+                               <input type="text" class="form-control form-control-user" id="nomEtape"  placeholder="nomEtape"
+                               formControlName="nomEtape"
+                               class="form-control"
+    
+                             [ngClass]="{ 'is-invalid': submitted && f.nomEtape.errors }">
+                             
+                             <div *ngIf="submitted && f.nomEtape.errors" class="invalid-feedback">
+                              <div *ngIf="f.nomEtape.errors.required">le nom de l'étape  est requis</div>
+                          </div>
+                            </div>
+                            <div class="form-group">
+                              <label> <i> Le numéro de l'étape </i></label>
+                               <input type="text" class="form-control form-control-user" id="numEtape" placeholder="numEtape"
+                               formControlName="numEtape"
+                               class="form-control"
+    
+                             [ngClass]="{ 'is-invalid': submitted && f.numEtape.errors }">
+                             
+                             <div *ngIf="submitted && f.numEtape.errors" class="invalid-feedback">
+                              <div *ngIf="f.numEtape.errors.required"> Le numéro de l'étape est requis</div>
+                              <div *ngIf="f.numEtape.errors.minlength">Le numéro de l'étape   doit comporter au moins 1 chiffre </div>
+                          </div>
+                            </div>
+                        
+            
+                          
+                          
+                  
+                         
+                          
+                          <button class="btn btn-primary btn-user btn-block"  type="submit" (click)="add()"> Ajouter</button>
+                      <button class="btn btn-primary btn-user btn-block" type="reset" (click)="onReset()">Annuler</button>
+                    
+                          
+                   
+                         
+                        </form>
+                        
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+        
+      </div>
+      </div>
+      
+  
+  <!--https://www.gettyimages.ca/search/more-like-this/1138178137?assettype=image&family=creative&license=rf&page=3&phrase=produit&sort=mostpopular#license-->

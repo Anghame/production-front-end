@@ -1,6 +1,7 @@
 <body>
-
-    <div [style.background]="'url(./assets/img/background.jpg)'">
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('./assets/img/azerty.jpg');">
+    <!--<div [style.background]="'url(./assets/img/background.jpg)'">-->
          <!--   Creative Tim Branding   -->
          <a  [routerLink]="['/home']">
              <div class="logo-container">
@@ -39,32 +40,23 @@
                                  <th data-field="name" data-sortable="true"> <h6 [ngStyle]="{color:'white' }"> Nom-Produit  </h6></th>
                                  <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">Désignation </h6></th>
                                  <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">url image Principale </h6></th>
-                                 <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">dossier technique de produit </h6></th>
+                                 <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">url dossier technique de produit </h6></th>
 
                              <tbody>
                                  <tr *ngFor="let produits of produit | async">
-                                     <td>{{produits.idProduit}}</td>
-                                     <td>{{produits.nomProduit}}</td>
-                                     <td>{{produits.designation}}</td>
-                                     <td>{{produits.urlImagePrincipale}}</td>
-                                     <td>{{produits.urlDossierTech}}</td>
-                                        
-                                    
-                                         
-                                 </tr>
-                                 <tr>
-                                     <td></td>
-                                     <td></td>
-                                     <td></td>
-                                     <td></td>
-                                     <td></td>
-                                     <td>
+                                     <td [ngStyle]="{color:'white' }">{{produits.idProduit}}</td>
+                                     <td [ngStyle]="{color:'white' }">{{produits.nomProduit}}</td>
+                                     <td [ngStyle]="{color:'white' }">{{produits.designation}}</td>
+                                     <td type="url" > <a  [ngStyle]="{color:'white' }" [routerLink]="['/home']">  {{produits.urlImagePrincipale}} </a></td>
+                                     <td [ngStyle]="{color:'white' }"> <a  [ngStyle]="{color:'white' }" [routerLink]="['/home']"> {{produits.urlDossierTec}} </a></td>
+                                      <td> </td>  
+                                      <td>
                                         <div class="fixed-table-toolbar">
                                             <div class="bs-bars pull-left">
                                                 <div class="toolbar">
                                                 
                                                     <button class="btn btn-default" id="modBtn">  <h6 [ngStyle]="{color:'white' }"> <b>Modifier</b></h6></button>
-                                                    <button class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
+                                                    <button button (click)="delete(produits.idProduit)"class="btn btn-default" id="suppBtn"> <h6 [ngStyle]="{color:'white' }"> <b>Supprimer</b> </h6></button>
                                                 </div>
                                             </div>
                                            
@@ -73,6 +65,7 @@
                                     </td>
                                          
                                  </tr>
+                                
                                 
                                 
                              </tbody>
@@ -111,6 +104,7 @@
              </div>
          </div>
          
+     </div>
      </div>
  </body>
  

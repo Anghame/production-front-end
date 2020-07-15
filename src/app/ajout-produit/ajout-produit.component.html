@@ -1,4 +1,6 @@
-<div [style.background]="'url(./assets/img/background1.jpg)'">
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('./assets/img/background1.jpg');">
+<!-- <div [style.background]="'url(./assets/img/background1.jpg)'">-->
 
 
     <div class="container">
@@ -69,7 +71,34 @@
                         </div>
                           </div>
 
-                          
+                          <div class="form-group">
+                            <label> <i> L'image principale de produit :</i> </label>
+                             <input type="text" class="form-control form-control-user" id="urlImagePrincipale"  placeholder="urlImagePrincipale"
+                             formControlName="urlImagePrincipale"
+                             class="form-control"
+  
+                           [ngClass]="{ 'is-invalid': submitted && f.urlImagePrincipale.errors }">
+                           
+                           <div *ngIf="submitted && f.urlImagePrincipale.errors" class="invalid-feedback">
+                            <div *ngIf="f.urlImagePrincipale.errors.required">urlImagePrincipale est requis</div>
+                            <div *ngIf="f.urlImagePrincipale.errors.minlength">****</div>
+                        </div>
+                          </div>
+                          <div class="form-group">
+                            <label> <i> le dossier technique de produit :</i> </label>
+                             <input type="text" class="form-control form-control-user" id="urlDossierTec"  placeholder="urlDossierTechnique"
+                             formControlName="urlDossierTec"
+                             class="form-control"
+  
+                           [ngClass]="{ 'is-invalid': submitted && f.urlDossierTec.errors }">
+                           
+                           <div *ngIf="submitted && f.urlDossierTechnique.errors" class="invalid-feedback">
+                            <div *ngIf="f.urlDossierTec.errors.required">urlDossierTechnique est requis</div>
+                            <div *ngIf="f.urlDossierTec.errors.minlength">****</div>
+                        </div>
+                          </div>
+
+                          <!-- 
                             <a   [ngStyle]="{color:'black' }" class="nav-link" href="tables.html">
                               
                               <span><u> définir une image principale de produit</u> </span></a>
@@ -79,7 +108,7 @@
                         
                               <span ><u> remplir le dossier technique de produit </u> </span></a>
                         
-                      
+                      -->
             
                           
                          
@@ -111,4 +140,4 @@
       
     </div>
     
-
+</div>

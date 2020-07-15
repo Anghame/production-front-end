@@ -17,11 +17,11 @@ export class SeuilService {
   }
 
   update(idSeuil: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/update${idSeuil}`, value).pipe(map(res=>{return res;}));
+    return this.http.put(`${this.baseUrl}/update/${idSeuil}`, value).pipe(map(res=>{return res;}));
   }
 
   delete(idSeuil: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/delete${idSeuil}`, { responseType: 'text' }).pipe(map(res=>{return res;}));
+    return this.http.delete(`${this.baseUrl}/delete/${idSeuil}`, { responseType: 'text' }).pipe(map(res=>{return res;}));
   }
 
   getAll(): Observable<any> {

@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="description">
-                        <h3 [ngStyle]="{color:'white' }">Modification coordonnées  utilisateur</h3>
+                        <h3 [ngStyle]="{color:'white' }">Modification Détails  utilisateur</h3>
                        
                     </div>
   
@@ -25,30 +25,7 @@
                         <div class="fixed-table-toolbar">
                             
                         
-                            <table id="fresh-table" class="table">
-                                <thead>
-                                    <th data-field="id"><h6 [ngStyle]="{color:'white' }"> ID-Produit </h6></th>
-                                    <th data-field="name" data-sortable="true"> <h6 [ngStyle]="{color:'white' }"> Nom-Produit  </h6></th>
-                                    <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">Désignation </h6></th>
-                                    <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">url image Principale </h6></th>
-                                    <th data-field="country" data-sortable="true"> <h6 [ngStyle]="{color:'white' }">dossier technique de produit </h6></th>
-   
-                                <tbody>
-                                    <tr *ngFor="let produits of produit1 | async">
-                                        <td>{{produits.idProduit}}</td>
-                                        <td>{{produits.nomProduit}}</td>
-                                        <td>{{produits.designation}}</td>
-                                        <td>{{produits.urlImagePrincipale}}</td>
-                                        <td>{{produits.urlDossierTech}}</td>
-                                          
-                                       
-                                    
-                                        
-                                    </tr>
-                                    
-                                </tbody>
-    
-                            </table>
+                           
                             <br> 
                                     <div  class="row justify-content-center ">
     
