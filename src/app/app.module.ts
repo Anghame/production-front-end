@@ -49,7 +49,13 @@ import { UpdateClientComponent } from './update-client/update-client.component';
 import { AjoutEtapeComponent } from './ajout-etape/ajout-etape.component';
 import { GestionEtapeComponent } from './gestion-etape/gestion-etape.component';
 import { LesProduitsComponent } from './les-produits/les-produits.component';
+<<<<<<< HEAD
 //import { SuiviProdComponent } from './suivi-prod/suivi-prod.component';
+=======
+import { TableComponent } from './table/table.component';
+import { TableauBordComponent } from './tableau-bord/tableau-bord.component';
+
+>>>>>>> b9a31e2b187c0828af8b24bcdd2c33dad78db079
 //import { UpdateUserComponent } from './update-user/update-user.component';
 
 
@@ -123,7 +129,12 @@ const routes: Routes = [
     AjoutEtapeComponent,
     GestionEtapeComponent,
     LesProduitsComponent,
+<<<<<<< HEAD
     //SuiviProdComponent,
+=======
+    TableComponent,
+    TableauBordComponent,
+>>>>>>> b9a31e2b187c0828af8b24bcdd2c33dad78db079
     //UpdateUserComponent,
 
   

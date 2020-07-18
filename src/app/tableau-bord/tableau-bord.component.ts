@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
 import { ApiServiceService } from 'src/app/api-service.service';
-/*import { UserService } from '../_services/user.service';*/
-
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-tableau-bord',
+  templateUrl: './tableau-bord.component.html',
+  styleUrls: ['./tableau-bord.component.css']
 })
-export class HomeComponent implements OnInit {
- 
+export class TableauBordComponent implements OnInit {
+
   canvas: any;
   ctx: any;
 data = [];
