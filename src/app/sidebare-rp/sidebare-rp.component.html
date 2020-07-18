@@ -4,7 +4,7 @@
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/">
     <div class="sidebar-brand-icon rotate-n-15">
-      <i class="fas fa-laugh-wink"></i>
+      <img rel="icon" type="image/x-icon" href="assets/img/logo1.jpg">
     </div>
     <div class="sidebar-brand-text mx-3"> SuiviProd <sup> </sup></div>
   </a>
@@ -38,11 +38,21 @@
      
       <span>Les produits</span></a>
   </li>
+ 
   <li class="nav-item">
-      <a class="nav-link"[routerLink]="['/ordresFab']">
-      <span>les ordres de fabrication</span> </a>
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
   
-  
+      <span>gestion des ordres de fabrication</span>
+    </a>
+    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+      <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">les ordres de <br>fabrication:</h6>
+        <a class="collapse-item" [routerLink]="['/ordresFab']">Consulter les <br> ordre des fabrication</a>
+        <a class="collapse-item" [routerLink]="['/ajoutOf']">Ajout d'un <br> ordre de fabrication</a>
+        <a class="collapse-item" [routerLink]="['/gestionOf']">Suppression/modification  <br>  des ordres des fabrications</a>
+       
+      </div>
+    </div>
   </li>
 
  
@@ -55,12 +65,8 @@
   <!-- Heading -->
   <div class="sidebar-heading">
   </div>
-  <li class="nav-item">
-    <a class="nav-link" [routerLink]="['/infoPerso']">
-      
-      <span>les informations Personnels </span></a>
-  </li>
-  <!-- Nav Item - Pages Collapse Menu -->
+  
+<!-- Nav Item - Pages Collapse Menu -->
 
 
   <!-- Nav Item - Charts -->

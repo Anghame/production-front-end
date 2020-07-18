@@ -49,7 +49,7 @@ import { UpdateClientComponent } from './update-client/update-client.component';
 import { AjoutEtapeComponent } from './ajout-etape/ajout-etape.component';
 import { GestionEtapeComponent } from './gestion-etape/gestion-etape.component';
 import { LesProduitsComponent } from './les-produits/les-produits.component';
-
+//import { SuiviProdComponent } from './suivi-prod/suivi-prod.component';
 //import { UpdateUserComponent } from './update-user/update-user.component';
 
 
@@ -123,6 +123,7 @@ const routes: Routes = [
     AjoutEtapeComponent,
     GestionEtapeComponent,
     LesProduitsComponent,
+    //SuiviProdComponent,
     //UpdateUserComponent,
 
   
