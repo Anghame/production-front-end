@@ -31,6 +31,8 @@ import { UpdateClientComponent } from './update-client/update-client.component';
 import { AjoutEtapeComponent } from './ajout-etape/ajout-etape.component';
 import { GestionEtapeComponent } from './gestion-etape/gestion-etape.component';
 import { LesProduitsComponent } from './les-produits/les-produits.component';
+import { TableComponent } from './table/table.component';
+import { TableauBordComponent } from './tableau-bord/tableau-bord.component';
 //import { UpdateUserComponent } from './update-user/update-user.component';
 
 
@@ -158,7 +160,14 @@ component:AjoutEtapeComponent
 component:GestionEtapeComponent
   
 },
-
+{ path:'suiviProd',
+component:TableComponent
+  
+},
+{ path:'tableauDeBord',
+component:TableauBordComponent
+  
+},
 
 
 
