@@ -28,19 +28,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-        <i class="fas fa-fw fa-cog"></i>
-        <span>les seuils de production</span> 
-      </a>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">seuils:</h6>
-          <a class="collapse-item" [routerLink]="['/defSeuil']">Définir un <br>nouveau seuil</a>
-          <a class="collapse-item"[routerLink]="['/consultSeuil']">consulter le <br> seuil actuel </a>
-        </div>
-      </div>
-    </li>
+   
     <li class="nav-item">
       <a class="nav-link"  [routerLink]="['/tableauDeBord']">
         <i class="fas fa-fw fa-table"></i>
@@ -52,12 +40,6 @@
         <span>suivi le production </span></a>
     
   </li>
-  <li class="nav-item">
-    <a class="nav-link"  [routerLink]="['/diffuserNotif']">
-      <i class="fas fa-fw fa-table"></i>
-      <span>diffusion des notification</span></a>
-  </li>
-
 
     <!-- Nav Item - Utilities Collapse Menu -->
  
@@ -112,7 +94,6 @@
           <a class="collapse-item" [routerLink]="['/ajoutProduit']">Ajout Produit</a>
           <a class="collapse-item" [routerLink]="['/gestionProduit']">Suppression/modification  <br> des produits </a>
         
-  
         </div>
       </div>
     </li>
@@ -120,8 +101,7 @@
     <li class="nav-item">
       <a class="nav-link"[routerLink]="['/ordresFab']">
       <span>les ordres de fabrication</span> </a>
-  
-  
+
   </li>
     <!-- Nav Item - Charts -->
     <!-- 

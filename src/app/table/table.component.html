@@ -17,7 +17,7 @@
   <!-- Custom styles for this template -->
 
 <style type="text/css">
-  
+
 
 /*!
  DataTables Bootstrap 4 integration
@@ -37,6 +37,7 @@ renderer:"bootstrap"});b.extend(f.ext.classes,{sWrapper:"dataTables_wrapper dt-b
 </head>
 
 <body id="page-top">
+  
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -50,23 +51,31 @@ renderer:"bootstrap"});b.extend(f.ext.classes,{sWrapper:"dataTables_wrapper dt-b
 
       <!-- Main Content -->
       <div id="content">
-
-        <!-- Topbar -->
-       
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
+        
+        
         <div class="container-fluid">
 
           <!-- Page Heading -->
           <h1 class="h3 mb-2 text-gray-800">Table</h1>
           <p class="mb-4"></p>
+       
+        
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">table de suivi de production</h6>
             </div>
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher" aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
             <div class="card-body">
               <div >
         
