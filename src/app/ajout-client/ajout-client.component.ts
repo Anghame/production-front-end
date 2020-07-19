@@ -33,25 +33,21 @@ export class AjoutClientComponent implements OnInit {
   onSubmit() {
 
     console.log("Appelle de la fonction onSubmit");
-      this.submitted = true;
-      this.save();
-
-      // stop here if form is invalid
-     // if (this.ajoutClientForm.invalid) {
-       //   return;
-      //}
-
-      // display form values on success
-     // alert('utilisateur ajouté avexc succès ! :-)\n\n' +
-     // JSON.stringify(this.ajoutClientForm.value, null, 4));
-  }
+      this.submitted = true; 
+   // stop here if form is invalid
+   if (this.ajoutClientForm.invalid) {
+    return;
+}
+// display form values on success
+this.save();
+alert('client ajouté avexc succès ! :-)\n\n' + JSON.stringify(this.ajoutClientForm.value, null, 4));
+}
 
 
   onReset() {
       this.submitted = false;
       this.ajoutClientForm.reset();
   }
-  
 
   
     

@@ -97,6 +97,20 @@
         </div>
       </div>
     </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEtapes" aria-expanded="true" aria-controls="collapseProduit">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Gestion des Etapes</span>
+      </a>
+      <div id="collapseEtapes" class="collapse" aria-labelledby="headingProduit" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <h6 class="collapse-header">Gestion des Etapes :</h6>
+          <a class="collapse-item" [routerLink]="['/ajoutEtape']">Ajout Etape de production</a>
+          <a class="collapse-item" [routerLink]="['/gestionEtape']">Suppression/modification  <br> des étapes </a>
+        
+        </div>
+      </div>
+    </li>
 
     <li class="nav-item">
       <a class="nav-link"[routerLink]="['/ordresFab']">

@@ -24,24 +24,23 @@ export class AjoutOFComponent implements OnInit {
         idClient: ['', [Validators.required,Validators.minLength(6)]],
         idProduit: ['', [Validators.required, Validators.minLength(6)]],
         quantite: ['', [Validators.required,Validators.maxLength(4) ]],
-        dateEntre: ['', [Validators.required, CustomValidators.date]],
-        dateSortie: ['', [Validators.required,CustomValidators.date]],
+        dateEntre: ['', [Validators.required, ]],// CustomValidators.date
+        dateSortie: ['', [Validators.required,]],//CustomValidators.date
         
       }, );
   }
   get f() { return this.ajoutOfForm.controls; }
 
   onSubmit() {
-      this.submitted = true;
-      
-      this.save();
+    console.log("Appelle de la fonction onSubmit");
+    this.submitted = true; 
       // stop here if form is invalid
       if (this.ajoutOfForm.invalid) {
           return;
       }
-
+      this.save();
       // display form values on success
-      alert('utilisateur ajouté avexc succès ! :-)\n\n' + JSON.stringify(this.ajoutOfForm.value, null, 4));
+      alert('ordre de fabrication  ajouté avec succès ! :-)\n\n' + JSON.stringify(this.ajoutOfForm.value, null, 4));
   }
 
   onReset() {
@@ -72,7 +71,7 @@ export class AjoutOFComponent implements OnInit {
       this.ordreFabService.add(this.ordreFabrication)
         .subscribe(data => console.log(data), error => console.log(error));
       this.ordreFabrication= new OrdreFab();
-      
+      //this.goToListe();
     }
     goToListe()
 {

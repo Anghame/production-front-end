@@ -33,16 +33,17 @@ export class AjoutEtapeComponent implements OnInit {
 
     console.log("Appelle de la fonction onSubmit");
       this.submitted = true;
-      this.save();
+      
 
       // stop here if form is invalid
-     // if (this.ajoutClientForm.invalid) {
-       //   return;
-      //}
+     if (this.ajoutEtapeForm.invalid) {
+         return;
+      }
 
-      // display form values on success
-     // alert('utilisateur ajouté avexc succès ! :-)\n\n' +
-     // JSON.stringify(this.ajoutClientForm.value, null, 4));
+    // display form values on success
+    this.save();
+     alert('utilisateur ajouté avexc succès ! :-)\n\n' +
+      JSON.stringify(this.ajoutEtapeForm.value, null, 4));
   }
 
 
